@@ -24,4 +24,5 @@ El objetivo principal del proyecto es analizar, visualizar y predecir la concent
   - `scikit-learn` para creación de modelos predictivos.
 
 - **Jupyter Notebook**: Entorno de desarrollo para análisis y visualización.
+- **Tableau**": Entorno para el diseño de y representacion de datos.
 
