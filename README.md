@@ -22,6 +22,7 @@ El objetivo principal del proyecto es analizar, visualizar y predecir la concent
   - `pandas` y `numpy` para manipulación y análisis de datos.
   - `matplotlib` y `seaborn` para visualización.
   - `scikit-learn` para creación de modelos predictivos.
+  - `scipy.stats` para creación de estadistica.
 
 - **Jupyter Notebook**: Entorno de desarrollo para análisis y visualización.
 - **Tableau**": Entorno para el diseño de y representacion de datos.
