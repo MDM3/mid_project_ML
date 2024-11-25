@@ -1,0 +1,3196 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20243.24.1010.1014                               -->
+<workbook original-version='18.1' source-build='2024.3.0 (20243.24.1010.1014)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AnimationOnByDefault />
+    <MapboxVectorStylesAndLayers />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelExtractV2 />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SheetIdentifierTracking />
+    <SortTagCleanup />
+    <_.fcp.VConnDownstreamExtractsWithWarnings.true...VConnDownstreamExtractsWithWarnings />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource hasconnection='false' inline='true' name='Parameters' version='18.1'>
+      <aliases enabled='yes' />
+      <column caption='Año Parámetro' datatype='real' name='[Año Parámetro]' param-domain-type='any' role='measure' type='quantitative' value='1.0'>
+        <calculation class='tableau' formula='1.0' />
+      </column>
+      <column caption='Radial inner' datatype='real' name='[Parámetro 1]' param-domain-type='any' role='measure' type='quantitative' value='-5.'>
+        <calculation class='tableau' formula='-5.' />
+      </column>
+    </datasource>
+    <datasource caption='df_all_targets+ (Varias conexiones)' inline='true' name='federated.0ikf9is0xv3orl10ghsow1717vhv' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='df_all_targets' name='excel-direct.0mrz8ux0d5krit1246w6n0wo9zvu'>
+            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='C:/Users/Darkos/Downloads/df_all_targets.xlsx' interpretationMode='0' password='' server='' validate='no' />
+          </named-connection>
+          <named-connection caption='Estaciones_para_Tableau' name='excel-direct.1f1cw4j0pn3xmd1h8pf9908xy9ro'>
+            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='C:/Users/Darkos/Downloads/Estaciones_para_Tableau.xlsx' interpretationMode='0' password='' server='' validate='no' />
+          </named-connection>
+          <named-connection caption='df_importance' name='excel-direct.1euts0s0t0m1ly1c81pzr0sxbnep'>
+            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='C:/Users/Darkos/Downloads/df_importance.xlsx' interpretationMode='0' password='' server='' validate='no' />
+          </named-connection>
+        </named-connections>
+        <relation type='collection'>
+          <relation connection='excel-direct.0mrz8ux0d5krit1246w6n0wo9zvu' name='df_all_targets' table='[df_all_targets$]' type='table'>
+            <columns gridOrigin='A1:Q7301:no:A1:Q7301:0' header='yes' outcome='2'>
+              <column datatype='date' name='fecha' ordinal='0' />
+              <column datatype='integer' name='estacion' ordinal='1' />
+              <column datatype='real' name='temperatura' ordinal='2' />
+              <column datatype='real' name='precipitacion' ordinal='3' />
+              <column datatype='real' name='vel_Viento' ordinal='4' />
+              <column datatype='real' name='presion_barometrica' ordinal='5' />
+              <column datatype='integer' name='dir_viento' ordinal='6' />
+              <column datatype='integer' name='humedad_rel' ordinal='7' />
+              <column datatype='integer' name='mes' ordinal='8' />
+              <column datatype='integer' name='año' ordinal='9' />
+              <column datatype='string' name='nombre_estacion' ordinal='10' />
+              <column datatype='string' name='dir_cardinal' ordinal='11' />
+              <column datatype='string' name='estacion_año' ordinal='12' />
+              <column datatype='integer' name='monoxido_nitrogeno' ordinal='13' />
+              <column datatype='integer' name='dioxido_nitrogeno' ordinal='14' />
+              <column datatype='integer' name='oxido_nitrogeno' ordinal='15' />
+              <column datatype='real' name='ozono' ordinal='16' />
+            </columns>
+          </relation>
+          <relation connection='excel-direct.1f1cw4j0pn3xmd1h8pf9908xy9ro' name='Sheet1' table='[Sheet1$]' type='table'>
+            <columns gridOrigin='A1:G5:no:A1:G5:0' header='yes' outcome='6'>
+              <column datatype='string' name='ESTACIÓN' ordinal='0' />
+              <column datatype='real' name='LATITUD' ordinal='1' />
+              <column datatype='real' name='LONGITUD' ordinal='2' />
+              <column datatype='integer' name='ZIP CODE' ordinal='3' />
+              <column datatype='string' name='PAIS' ordinal='4' />
+              <column datatype='string' name='PROVINCIA' ordinal='5' />
+              <column datatype='integer' name='ID' ordinal='6' />
+            </columns>
+          </relation>
+          <relation connection='excel-direct.1euts0s0t0m1ly1c81pzr0sxbnep' name='df_importance' table='[df_importance$]' type='table'>
+            <columns gridOrigin='A1:E11:no:A1:E11:0' header='yes' outcome='6'>
+              <column datatype='string' name='F1' ordinal='0' />
+              <column datatype='real' name='monoxido_nitrogeno' ordinal='1' />
+              <column datatype='real' name='dioxido_nitrogeno' ordinal='2' />
+              <column datatype='real' name='oxido_nitrogeno' ordinal='3' />
+              <column datatype='real' name='ozono' ordinal='4' />
+            </columns>
+          </relation>
+        </relation>
+        <cols>
+          <map key='[ESTACIÓN]' value='[Sheet1].[ESTACIÓN]' />
+          <map key='[F1]' value='[df_importance].[F1]' />
+          <map key='[ID]' value='[Sheet1].[ID]' />
+          <map key='[LATITUD]' value='[Sheet1].[LATITUD]' />
+          <map key='[LONGITUD]' value='[Sheet1].[LONGITUD]' />
+          <map key='[PAIS]' value='[Sheet1].[PAIS]' />
+          <map key='[PROVINCIA]' value='[Sheet1].[PROVINCIA]' />
+          <map key='[ZIP CODE]' value='[Sheet1].[ZIP CODE]' />
+          <map key='[año]' value='[df_all_targets].[año]' />
+          <map key='[dioxido_nitrogeno (df!importance)]' value='[df_importance].[dioxido_nitrogeno]' />
+          <map key='[dioxido_nitrogeno]' value='[df_all_targets].[dioxido_nitrogeno]' />
+          <map key='[dir_cardinal]' value='[df_all_targets].[dir_cardinal]' />
+          <map key='[dir_viento]' value='[df_all_targets].[dir_viento]' />
+          <map key='[estacion]' value='[df_all_targets].[estacion]' />
+          <map key='[estacion_año]' value='[df_all_targets].[estacion_año]' />
+          <map key='[fecha]' value='[df_all_targets].[fecha]' />
+          <map key='[humedad_rel]' value='[df_all_targets].[humedad_rel]' />
+          <map key='[mes]' value='[df_all_targets].[mes]' />
+          <map key='[monoxido_nitrogeno (df!importance)]' value='[df_importance].[monoxido_nitrogeno]' />
+          <map key='[monoxido_nitrogeno]' value='[df_all_targets].[monoxido_nitrogeno]' />
+          <map key='[nombre_estacion]' value='[df_all_targets].[nombre_estacion]' />
+          <map key='[oxido_nitrogeno (df!importance)]' value='[df_importance].[oxido_nitrogeno]' />
+          <map key='[oxido_nitrogeno]' value='[df_all_targets].[oxido_nitrogeno]' />
+          <map key='[ozono (df!importance)]' value='[df_importance].[ozono]' />
+          <map key='[ozono]' value='[df_all_targets].[ozono]' />
+          <map key='[precipitacion]' value='[df_all_targets].[precipitacion]' />
+          <map key='[presion_barometrica]' value='[df_all_targets].[presion_barometrica]' />
+          <map key='[temperatura]' value='[df_all_targets].[temperatura]' />
+          <map key='[vel_Viento]' value='[df_all_targets].[vel_Viento]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[df_all_targets]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:Q7301:no:A1:Q7301:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>2</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Sheet1]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:G5:no:A1:G5:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>6</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[df_importance]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:E11:no:A1:E11:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>6</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>fecha</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[fecha]</local-name>
+            <parent-name>[df_all_targets]</parent-name>
+            <remote-alias>fecha</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;DATE&quot;</attribute>
+            </attributes>
+            <object-id>[df!all!targets_4F0E48EB143D41CAB061A2ACCB7869CB]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>estacion</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[estacion]</local-name>
+            <parent-name>[df_all_targets]</parent-name>
+            <remote-alias>estacion</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[df!all!targets_4F0E48EB143D41CAB061A2ACCB7869CB]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>temperatura</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[temperatura]</local-name>
+            <parent-name>[df_all_targets]</parent-name>
+            <remote-alias>temperatura</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+            <object-id>[df!all!targets_4F0E48EB143D41CAB061A2ACCB7869CB]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>precipitacion</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[precipitacion]</local-name>
+            <parent-name>[df_all_targets]</parent-name>
+            <remote-alias>precipitacion</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+            <object-id>[df!all!targets_4F0E48EB143D41CAB061A2ACCB7869CB]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>vel_Viento</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[vel_Viento]</local-name>
+            <parent-name>[df_all_targets]</parent-name>
+            <remote-alias>vel_Viento</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+            <object-id>[df!all!targets_4F0E48EB143D41CAB061A2ACCB7869CB]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>presion_barometrica</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[presion_barometrica]</local-name>
+            <parent-name>[df_all_targets]</parent-name>
+            <remote-alias>presion_barometrica</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+            <object-id>[df!all!targets_4F0E48EB143D41CAB061A2ACCB7869CB]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>dir_viento</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[dir_viento]</local-name>
+            <parent-name>[df_all_targets]</parent-name>
+            <remote-alias>dir_viento</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[df!all!targets_4F0E48EB143D41CAB061A2ACCB7869CB]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>humedad_rel</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[humedad_rel]</local-name>
+            <parent-name>[df_all_targets]</parent-name>
+            <remote-alias>humedad_rel</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[df!all!targets_4F0E48EB143D41CAB061A2ACCB7869CB]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>mes</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[mes]</local-name>
+            <parent-name>[df_all_targets]</parent-name>
+            <remote-alias>mes</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[df!all!targets_4F0E48EB143D41CAB061A2ACCB7869CB]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>año</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[año]</local-name>
+            <parent-name>[df_all_targets]</parent-name>
+            <remote-alias>año</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[df!all!targets_4F0E48EB143D41CAB061A2ACCB7869CB]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>nombre_estacion</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[nombre_estacion]</local-name>
+            <parent-name>[df_all_targets]</parent-name>
+            <remote-alias>nombre_estacion</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LES_RES_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[df!all!targets_4F0E48EB143D41CAB061A2ACCB7869CB]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>dir_cardinal</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[dir_cardinal]</local-name>
+            <parent-name>[df_all_targets]</parent-name>
+            <remote-alias>dir_cardinal</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LES_RES_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[df!all!targets_4F0E48EB143D41CAB061A2ACCB7869CB]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>estacion_año</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[estacion_año]</local-name>
+            <parent-name>[df_all_targets]</parent-name>
+            <remote-alias>estacion_año</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LES_RES_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[df!all!targets_4F0E48EB143D41CAB061A2ACCB7869CB]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>monoxido_nitrogeno</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[monoxido_nitrogeno]</local-name>
+            <parent-name>[df_all_targets]</parent-name>
+            <remote-alias>monoxido_nitrogeno</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[df!all!targets_4F0E48EB143D41CAB061A2ACCB7869CB]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>dioxido_nitrogeno</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[dioxido_nitrogeno]</local-name>
+            <parent-name>[df_all_targets]</parent-name>
+            <remote-alias>dioxido_nitrogeno</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[df!all!targets_4F0E48EB143D41CAB061A2ACCB7869CB]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>oxido_nitrogeno</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[oxido_nitrogeno]</local-name>
+            <parent-name>[df_all_targets]</parent-name>
+            <remote-alias>oxido_nitrogeno</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[df!all!targets_4F0E48EB143D41CAB061A2ACCB7869CB]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ozono</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[ozono]</local-name>
+            <parent-name>[df_all_targets]</parent-name>
+            <remote-alias>ozono</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+            <object-id>[df!all!targets_4F0E48EB143D41CAB061A2ACCB7869CB]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ESTACIÓN</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[ESTACIÓN]</local-name>
+            <parent-name>[Sheet1]</parent-name>
+            <remote-alias>ESTACIÓN</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LES_RES_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[Sheet1_564E4D2B25C44FD5B79B51BAF1612D14]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>LATITUD</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[LATITUD]</local-name>
+            <parent-name>[Sheet1]</parent-name>
+            <remote-alias>LATITUD</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+            <object-id>[Sheet1_564E4D2B25C44FD5B79B51BAF1612D14]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>LONGITUD</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[LONGITUD]</local-name>
+            <parent-name>[Sheet1]</parent-name>
+            <remote-alias>LONGITUD</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+            <object-id>[Sheet1_564E4D2B25C44FD5B79B51BAF1612D14]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ZIP CODE</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[ZIP CODE]</local-name>
+            <parent-name>[Sheet1]</parent-name>
+            <remote-alias>ZIP CODE</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[Sheet1_564E4D2B25C44FD5B79B51BAF1612D14]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PAIS</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[PAIS]</local-name>
+            <parent-name>[Sheet1]</parent-name>
+            <remote-alias>PAIS</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LES_RES_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[Sheet1_564E4D2B25C44FD5B79B51BAF1612D14]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PROVINCIA</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[PROVINCIA]</local-name>
+            <parent-name>[Sheet1]</parent-name>
+            <remote-alias>PROVINCIA</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LES_RES_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[Sheet1_564E4D2B25C44FD5B79B51BAF1612D14]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[ID]</local-name>
+            <parent-name>[Sheet1]</parent-name>
+            <remote-alias>ID</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[Sheet1_564E4D2B25C44FD5B79B51BAF1612D14]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>F1</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[F1]</local-name>
+            <parent-name>[df_importance]</parent-name>
+            <remote-alias>F1</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LES_RES_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[df!importance_1E234CF6D49D4F3C9239A81B335797EB]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>monoxido_nitrogeno</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[monoxido_nitrogeno (df!importance)]</local-name>
+            <parent-name>[df_importance]</parent-name>
+            <remote-alias>monoxido_nitrogeno</remote-alias>
+            <ordinal>25</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+            <object-id>[df!importance_1E234CF6D49D4F3C9239A81B335797EB]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>dioxido_nitrogeno</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[dioxido_nitrogeno (df!importance)]</local-name>
+            <parent-name>[df_importance]</parent-name>
+            <remote-alias>dioxido_nitrogeno</remote-alias>
+            <ordinal>26</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+            <object-id>[df!importance_1E234CF6D49D4F3C9239A81B335797EB]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>oxido_nitrogeno</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[oxido_nitrogeno (df!importance)]</local-name>
+            <parent-name>[df_importance]</parent-name>
+            <remote-alias>oxido_nitrogeno</remote-alias>
+            <ordinal>27</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+            <object-id>[df!importance_1E234CF6D49D4F3C9239A81B335797EB]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ozono</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[ozono (df!importance)]</local-name>
+            <parent-name>[df_importance]</parent-name>
+            <remote-alias>ozono</remote-alias>
+            <ordinal>28</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+            <object-id>[df!importance_1E234CF6D49D4F3C9239A81B335797EB]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='string' name='[:Measure Names]' role='dimension' type='nominal'>
+        <aliases>
+          <alias key='&quot;[federated.0ikf9is0xv3orl10ghsow1717vhv].[sum:dioxido_nitrogeno (df!importance):qk]&quot;' value='Dioxido Nitrogeno ' />
+          <alias key='&quot;[federated.0ikf9is0xv3orl10ghsow1717vhv].[sum:monoxido_nitrogeno (df!importance):qk]&quot;' value='Monoxido Nitrogeno ' />
+          <alias key='&quot;[federated.0ikf9is0xv3orl10ghsow1717vhv].[sum:oxido_nitrogeno (df!importance):qk]&quot;' value='Oxido Nitrogeno' />
+          <alias key='&quot;[federated.0ikf9is0xv3orl10ghsow1717vhv].[sum:ozono (df!importance):qk]&quot;' value='Ozono' />
+        </aliases>
+      </column>
+      <column aggregation='Sum' caption='Col index' datatype='integer' name='[Calculation_815714499501019136]' role='dimension' type='ordinal'>
+        <calculation class='tableau' formula='Case MONTH([fecha])&#13;&#10;When 1 Then 1&#13;&#10;When 2 Then 2&#13;&#10;When 3 Then 3&#13;&#10;When 4 Then 1&#13;&#10;When 5 Then 2&#13;&#10;When 6 Then 3&#13;&#10;When 7 Then 1&#13;&#10;When 8 Then 2&#13;&#10;When 9 Then 3&#13;&#10;When 10 Then 1&#13;&#10;When 11 Then 2&#13;&#10;When 12 Then 3&#13;&#10;END' />
+      </column>
+      <column aggregation='Sum' caption='Row index' datatype='integer' name='[Calculation_815714499501654017]' role='dimension' type='ordinal'>
+        <calculation class='tableau' formula='DATEPART(&apos;week&apos;,[fecha]) - {FIXED  DATEPART(&apos;month&apos;,[fecha]): MIN(DATEPART(&apos;week&apos;,[fecha]))}' />
+      </column>
+      <column caption='Radial field' datatype='real' name='[Calculation_815714499519143938]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='[temperatura]' />
+      </column>
+      <column caption='Radial angle' datatype='real' name='[Calculation_815714499519533059]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='(INDEX()-1)*(1/WINDOW_COUNT(COUNT([Calculation_815714499519143938])))*2*PI()'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <column caption='Estación' datatype='string' name='[ESTACIÓN]' role='dimension' type='nominal' />
+      <column caption='Importance' datatype='string' name='[F1]' role='dimension' type='nominal' />
+      <column datatype='integer' name='[ID]' role='dimension' type='ordinal' />
+      <column caption='Latitud' datatype='real' name='[LATITUD]' role='measure' type='quantitative' />
+      <column caption='Longitud' datatype='real' name='[LONGITUD]' role='measure' type='quantitative' />
+      <column aggregation='None' datatype='integer' name='[Monoxido Nitrogeno (agrupación)]' role='dimension' type='quantitative'>
+        <calculation class='bin' decimals='1' formula='[monoxido_nitrogeno]' peg='0' size='12.3' />
+      </column>
+      <column caption='Pais' datatype='string' name='[PAIS]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+      <column caption='Provincia' datatype='string' name='[PROVINCIA]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+      <column aggregation='None' datatype='integer' name='[Temperatura (agrupación)]' role='dimension' type='quantitative'>
+        <calculation class='bin' decimals='0' formula='[temperatura]' peg='0' size='1.54' />
+      </column>
+      <column aggregation='Sum' caption='Zip Code' datatype='integer' default-format='*00000' name='[ZIP CODE]' role='dimension' semantic-role='[ZipCode].[Name]' type='ordinal' />
+      <column caption='Sheet1' datatype='table' name='[__tableau_internal_object_id__].[Sheet1_564E4D2B25C44FD5B79B51BAF1612D14]' role='measure' type='quantitative' />
+      <column caption='df_all_targets' datatype='table' name='[__tableau_internal_object_id__].[df!all!targets_4F0E48EB143D41CAB061A2ACCB7869CB]' role='measure' type='quantitative' />
+      <column caption='df_importance' datatype='table' name='[__tableau_internal_object_id__].[df!importance_1E234CF6D49D4F3C9239A81B335797EB]' role='measure' type='quantitative' />
+      <column caption='Año' datatype='integer' name='[año]' role='dimension' type='quantitative' />
+      <column caption='Dioxido Nitrogeno (Df!Importance)' datatype='real' name='[dioxido_nitrogeno (df!importance)]' role='measure' type='quantitative' />
+      <column caption='Dioxido Nitrogeno' datatype='integer' name='[dioxido_nitrogeno]' role='measure' type='quantitative' />
+      <column caption='Dir Cardinal' datatype='string' name='[dir_cardinal]' role='dimension' type='nominal' />
+      <column caption='Dir Viento' datatype='integer' name='[dir_viento]' role='measure' type='quantitative' />
+      <column caption='Estacion' datatype='integer' name='[estacion]' role='measure' type='quantitative' />
+      <column caption='Estacion Año' datatype='string' name='[estacion_año]' role='dimension' type='nominal' />
+      <column caption='Fecha' datatype='date' name='[fecha]' role='dimension' type='ordinal' />
+      <column caption='Humedad Rel' datatype='integer' name='[humedad_rel]' role='measure' type='quantitative' />
+      <column caption='Mes' datatype='integer' name='[mes]' role='dimension' type='quantitative' />
+      <column caption='Monoxido Nitrogeno (Df!Importance)' datatype='real' name='[monoxido_nitrogeno (df!importance)]' role='measure' type='quantitative' />
+      <column caption='Monoxido Nitrogeno' datatype='integer' name='[monoxido_nitrogeno]' role='measure' type='quantitative' />
+      <column caption='Nombre Estacion' datatype='string' name='[nombre_estacion]' role='dimension' type='nominal' />
+      <column caption='Oxido Nitrogeno (Df!Importance)' datatype='real' name='[oxido_nitrogeno (df!importance)]' role='measure' type='quantitative' />
+      <column caption='Oxido Nitrogeno' datatype='integer' name='[oxido_nitrogeno]' role='measure' type='quantitative' />
+      <column caption='Ozono (Df!Importance)' datatype='real' name='[ozono (df!importance)]' role='measure' type='quantitative' />
+      <column caption='Ozono' datatype='real' name='[ozono]' role='measure' type='quantitative' />
+      <column caption='Precipitacion' datatype='real' name='[precipitacion]' role='measure' type='quantitative' />
+      <column caption='Presion Barometrica' datatype='real' name='[presion_barometrica]' role='measure' type='quantitative' />
+      <column caption='Temperatura' datatype='real' name='[temperatura]' role='measure' type='quantitative' />
+      <column caption='vel Viento' datatype='real' name='[vel_Viento]' role='measure' type='quantitative' />
+      <column-instance column='[__tableau_internal_object_id__].[df!importance_1E234CF6D49D4F3C9239A81B335797EB]' derivation='Count' name='[__tableau_internal_object_id__].[cnt:df!importance_1E234CF6D49D4F3C9239A81B335797EB:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[F1]' derivation='None' name='[none:F1:nk]' pivot='key' type='nominal' />
+      <column-instance column='[Forecast Indicator]' derivation='None' forecast-column-base='[Forecast Indicator]' forecast-column-type='forecast-indicator' name='[none:Forecast Indicator:nk]' pivot='key' type='nominal' />
+      <column-instance column='[ZIP CODE]' derivation='None' name='[none:ZIP CODE:ok]' pivot='key' type='ordinal' />
+      <column-instance column='[dir_cardinal]' derivation='None' name='[none:dir_cardinal:nk]' pivot='key' type='nominal' />
+      <column-instance column='[nombre_estacion]' derivation='None' name='[none:nombre_estacion:nk]' pivot='key' type='nominal' />
+      <column-instance column='[dioxido_nitrogeno (df!importance)]' derivation='Sum' name='[sum:dioxido_nitrogeno (df!importance):qk]' pivot='key' type='quantitative' />
+      <column-instance column='[monoxido_nitrogeno (df!importance)]' derivation='Sum' name='[sum:monoxido_nitrogeno (df!importance):qk]' pivot='key' type='quantitative' />
+      <column-instance column='[oxido_nitrogeno (df!importance)]' derivation='Sum' name='[sum:oxido_nitrogeno (df!importance):qk]' pivot='key' type='quantitative' />
+      <column-instance column='[ozono (df!importance)]' derivation='Sum' name='[sum:ozono (df!importance):qk]' pivot='key' type='quantitative' />
+      <column-instance column='[fecha]' derivation='Week-Trunc' name='[twk:fecha:qk]' pivot='key' type='quantitative' />
+      <group hidden='true' name='[Exclusiones (Nombre Estacion,SEMANA(Fecha))]' name-style='unqualified' user:auto-column='exclude'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[none:nombre_estacion:nk]' />
+          <groupfilter function='level-members' level='[twk:fecha:qk]' />
+        </groupfilter>
+      </group>
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' author-locale='es_ES' class='hyper' dbname='C:/Users/Darkos/AppData/Local/Temp/TableauTemp/#TableauTemp_1r7wa8u149mfrf1c5ri960qcbdje.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='11/21/2024 07:20:36 PM' username='tableau_internal_user'>
+          <relation type='collection'>
+            <relation name='df!all!targets_4F0E48EB143D41CAB061A2ACCB7869CB' table='[Extract].[df!all!targets_4F0E48EB143D41CAB061A2ACCB7869CB]' type='table' />
+            <relation name='Sheet1_564E4D2B25C44FD5B79B51BAF1612D14' table='[Extract].[Sheet1_564E4D2B25C44FD5B79B51BAF1612D14]' type='table' />
+            <relation name='df!importance_1E234CF6D49D4F3C9239A81B335797EB' table='[Extract].[df!importance_1E234CF6D49D4F3C9239A81B335797EB]' type='table' />
+          </relation>
+          <cols>
+            <map key='[ESTACIÓN]' value='[Sheet1_564E4D2B25C44FD5B79B51BAF1612D14].[ESTACIÓN]' />
+            <map key='[F1]' value='[df!importance_1E234CF6D49D4F3C9239A81B335797EB].[F1]' />
+            <map key='[ID]' value='[Sheet1_564E4D2B25C44FD5B79B51BAF1612D14].[ID]' />
+            <map key='[LATITUD]' value='[Sheet1_564E4D2B25C44FD5B79B51BAF1612D14].[LATITUD]' />
+            <map key='[LONGITUD]' value='[Sheet1_564E4D2B25C44FD5B79B51BAF1612D14].[LONGITUD]' />
+            <map key='[PAIS]' value='[Sheet1_564E4D2B25C44FD5B79B51BAF1612D14].[PAIS]' />
+            <map key='[PROVINCIA]' value='[Sheet1_564E4D2B25C44FD5B79B51BAF1612D14].[PROVINCIA]' />
+            <map key='[ZIP CODE]' value='[Sheet1_564E4D2B25C44FD5B79B51BAF1612D14].[ZIP CODE]' />
+            <map key='[año]' value='[df!all!targets_4F0E48EB143D41CAB061A2ACCB7869CB].[año]' />
+            <map key='[dioxido_nitrogeno (df!importance)]' value='[df!importance_1E234CF6D49D4F3C9239A81B335797EB].[dioxido_nitrogeno]' />
+            <map key='[dioxido_nitrogeno]' value='[df!all!targets_4F0E48EB143D41CAB061A2ACCB7869CB].[dioxido_nitrogeno]' />
+            <map key='[dir_cardinal]' value='[df!all!targets_4F0E48EB143D41CAB061A2ACCB7869CB].[dir_cardinal]' />
+            <map key='[dir_viento]' value='[df!all!targets_4F0E48EB143D41CAB061A2ACCB7869CB].[dir_viento]' />
+            <map key='[estacion]' value='[df!all!targets_4F0E48EB143D41CAB061A2ACCB7869CB].[estacion]' />
+            <map key='[estacion_año]' value='[df!all!targets_4F0E48EB143D41CAB061A2ACCB7869CB].[estacion_año]' />
+            <map key='[fecha]' value='[df!all!targets_4F0E48EB143D41CAB061A2ACCB7869CB].[fecha]' />
+            <map key='[humedad_rel]' value='[df!all!targets_4F0E48EB143D41CAB061A2ACCB7869CB].[humedad_rel]' />
+            <map key='[mes]' value='[df!all!targets_4F0E48EB143D41CAB061A2ACCB7869CB].[mes]' />
+            <map key='[monoxido_nitrogeno (df!importance)]' value='[df!importance_1E234CF6D49D4F3C9239A81B335797EB].[monoxido_nitrogeno]' />
+            <map key='[monoxido_nitrogeno]' value='[df!all!targets_4F0E48EB143D41CAB061A2ACCB7869CB].[monoxido_nitrogeno]' />
+            <map key='[nombre_estacion]' value='[df!all!targets_4F0E48EB143D41CAB061A2ACCB7869CB].[nombre_estacion]' />
+            <map key='[oxido_nitrogeno (df!importance)]' value='[df!importance_1E234CF6D49D4F3C9239A81B335797EB].[oxido_nitrogeno]' />
+            <map key='[oxido_nitrogeno]' value='[df!all!targets_4F0E48EB143D41CAB061A2ACCB7869CB].[oxido_nitrogeno]' />
+            <map key='[ozono (df!importance)]' value='[df!importance_1E234CF6D49D4F3C9239A81B335797EB].[ozono]' />
+            <map key='[ozono]' value='[df!all!targets_4F0E48EB143D41CAB061A2ACCB7869CB].[ozono]' />
+            <map key='[precipitacion]' value='[df!all!targets_4F0E48EB143D41CAB061A2ACCB7869CB].[precipitacion]' />
+            <map key='[presion_barometrica]' value='[df!all!targets_4F0E48EB143D41CAB061A2ACCB7869CB].[presion_barometrica]' />
+            <map key='[temperatura]' value='[df!all!targets_4F0E48EB143D41CAB061A2ACCB7869CB].[temperatura]' />
+            <map key='[vel_Viento]' value='[df!all!targets_4F0E48EB143D41CAB061A2ACCB7869CB].[vel_Viento]' />
+          </cols>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>fecha</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[fecha]</local-name>
+              <parent-name>[df!all!targets_4F0E48EB143D41CAB061A2ACCB7869CB]</parent-name>
+              <remote-alias>fecha</remote-alias>
+              <ordinal>0</ordinal>
+              <family>df_all_targets</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>2014</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[df!all!targets_4F0E48EB143D41CAB061A2ACCB7869CB]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>estacion</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[estacion]</local-name>
+              <parent-name>[df!all!targets_4F0E48EB143D41CAB061A2ACCB7869CB]</parent-name>
+              <remote-alias>estacion</remote-alias>
+              <ordinal>1</ordinal>
+              <family>df_all_targets</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[df!all!targets_4F0E48EB143D41CAB061A2ACCB7869CB]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>temperatura</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[temperatura]</local-name>
+              <parent-name>[df!all!targets_4F0E48EB143D41CAB061A2ACCB7869CB]</parent-name>
+              <remote-alias>temperatura</remote-alias>
+              <ordinal>2</ordinal>
+              <family>df_all_targets</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>395</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[df!all!targets_4F0E48EB143D41CAB061A2ACCB7869CB]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>precipitacion</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[precipitacion]</local-name>
+              <parent-name>[df!all!targets_4F0E48EB143D41CAB061A2ACCB7869CB]</parent-name>
+              <remote-alias>precipitacion</remote-alias>
+              <ordinal>3</ordinal>
+              <family>df_all_targets</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>201</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[df!all!targets_4F0E48EB143D41CAB061A2ACCB7869CB]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>vel_Viento</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[vel_Viento]</local-name>
+              <parent-name>[df!all!targets_4F0E48EB143D41CAB061A2ACCB7869CB]</parent-name>
+              <remote-alias>vel_Viento</remote-alias>
+              <ordinal>4</ordinal>
+              <family>df_all_targets</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>370</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[df!all!targets_4F0E48EB143D41CAB061A2ACCB7869CB]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>presion_barometrica</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[presion_barometrica]</local-name>
+              <parent-name>[df!all!targets_4F0E48EB143D41CAB061A2ACCB7869CB]</parent-name>
+              <remote-alias>presion_barometrica</remote-alias>
+              <ordinal>5</ordinal>
+              <family>df_all_targets</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>292</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[df!all!targets_4F0E48EB143D41CAB061A2ACCB7869CB]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>dir_viento</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[dir_viento]</local-name>
+              <parent-name>[df!all!targets_4F0E48EB143D41CAB061A2ACCB7869CB]</parent-name>
+              <remote-alias>dir_viento</remote-alias>
+              <ordinal>6</ordinal>
+              <family>df_all_targets</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>349</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[df!all!targets_4F0E48EB143D41CAB061A2ACCB7869CB]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>humedad_rel</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[humedad_rel]</local-name>
+              <parent-name>[df!all!targets_4F0E48EB143D41CAB061A2ACCB7869CB]</parent-name>
+              <remote-alias>humedad_rel</remote-alias>
+              <ordinal>7</ordinal>
+              <family>df_all_targets</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>88</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[df!all!targets_4F0E48EB143D41CAB061A2ACCB7869CB]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>mes</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[mes]</local-name>
+              <parent-name>[df!all!targets_4F0E48EB143D41CAB061A2ACCB7869CB]</parent-name>
+              <remote-alias>mes</remote-alias>
+              <ordinal>8</ordinal>
+              <family>df_all_targets</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>12</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[df!all!targets_4F0E48EB143D41CAB061A2ACCB7869CB]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>año</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[año]</local-name>
+              <parent-name>[df!all!targets_4F0E48EB143D41CAB061A2ACCB7869CB]</parent-name>
+              <remote-alias>año</remote-alias>
+              <ordinal>9</ordinal>
+              <family>df_all_targets</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[df!all!targets_4F0E48EB143D41CAB061A2ACCB7869CB]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>nombre_estacion</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[nombre_estacion]</local-name>
+              <parent-name>[df!all!targets_4F0E48EB143D41CAB061A2ACCB7869CB]</parent-name>
+              <remote-alias>nombre_estacion</remote-alias>
+              <ordinal>10</ordinal>
+              <family>df_all_targets</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LES_RES_S2' />
+              <object-id>[df!all!targets_4F0E48EB143D41CAB061A2ACCB7869CB]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>dir_cardinal</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[dir_cardinal]</local-name>
+              <parent-name>[df!all!targets_4F0E48EB143D41CAB061A2ACCB7869CB]</parent-name>
+              <remote-alias>dir_cardinal</remote-alias>
+              <ordinal>11</ordinal>
+              <family>df_all_targets</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>7</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LES_RES_S2' />
+              <object-id>[df!all!targets_4F0E48EB143D41CAB061A2ACCB7869CB]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>estacion_año</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[estacion_año]</local-name>
+              <parent-name>[df!all!targets_4F0E48EB143D41CAB061A2ACCB7869CB]</parent-name>
+              <remote-alias>estacion_año</remote-alias>
+              <ordinal>12</ordinal>
+              <family>df_all_targets</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LES_RES_S2' />
+              <object-id>[df!all!targets_4F0E48EB143D41CAB061A2ACCB7869CB]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>monoxido_nitrogeno</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[monoxido_nitrogeno]</local-name>
+              <parent-name>[df!all!targets_4F0E48EB143D41CAB061A2ACCB7869CB]</parent-name>
+              <remote-alias>monoxido_nitrogeno</remote-alias>
+              <ordinal>13</ordinal>
+              <family>df_all_targets</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>130</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[df!all!targets_4F0E48EB143D41CAB061A2ACCB7869CB]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>dioxido_nitrogeno</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[dioxido_nitrogeno]</local-name>
+              <parent-name>[df!all!targets_4F0E48EB143D41CAB061A2ACCB7869CB]</parent-name>
+              <remote-alias>dioxido_nitrogeno</remote-alias>
+              <ordinal>14</ordinal>
+              <family>df_all_targets</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>103</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[df!all!targets_4F0E48EB143D41CAB061A2ACCB7869CB]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>oxido_nitrogeno</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[oxido_nitrogeno]</local-name>
+              <parent-name>[df!all!targets_4F0E48EB143D41CAB061A2ACCB7869CB]</parent-name>
+              <remote-alias>oxido_nitrogeno</remote-alias>
+              <ordinal>15</ordinal>
+              <family>df_all_targets</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>264</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[df!all!targets_4F0E48EB143D41CAB061A2ACCB7869CB]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>ozono</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[ozono]</local-name>
+              <parent-name>[df!all!targets_4F0E48EB143D41CAB061A2ACCB7869CB]</parent-name>
+              <remote-alias>ozono</remote-alias>
+              <ordinal>16</ordinal>
+              <family>df_all_targets</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>697</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[df!all!targets_4F0E48EB143D41CAB061A2ACCB7869CB]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>ESTACIÓN</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[ESTACIÓN]</local-name>
+              <parent-name>[Sheet1_564E4D2B25C44FD5B79B51BAF1612D14]</parent-name>
+              <remote-alias>ESTACIÓN</remote-alias>
+              <ordinal>17</ordinal>
+              <family>Sheet1</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LES_RES_S2' />
+              <object-id>[Sheet1_564E4D2B25C44FD5B79B51BAF1612D14]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>LATITUD</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[LATITUD]</local-name>
+              <parent-name>[Sheet1_564E4D2B25C44FD5B79B51BAF1612D14]</parent-name>
+              <remote-alias>LATITUD</remote-alias>
+              <ordinal>18</ordinal>
+              <family>Sheet1</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Sheet1_564E4D2B25C44FD5B79B51BAF1612D14]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>LONGITUD</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[LONGITUD]</local-name>
+              <parent-name>[Sheet1_564E4D2B25C44FD5B79B51BAF1612D14]</parent-name>
+              <remote-alias>LONGITUD</remote-alias>
+              <ordinal>19</ordinal>
+              <family>Sheet1</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Sheet1_564E4D2B25C44FD5B79B51BAF1612D14]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>ZIP CODE</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[ZIP CODE]</local-name>
+              <parent-name>[Sheet1_564E4D2B25C44FD5B79B51BAF1612D14]</parent-name>
+              <remote-alias>ZIP CODE</remote-alias>
+              <ordinal>20</ordinal>
+              <family>Sheet1</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Sheet1_564E4D2B25C44FD5B79B51BAF1612D14]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>PAIS</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[PAIS]</local-name>
+              <parent-name>[Sheet1_564E4D2B25C44FD5B79B51BAF1612D14]</parent-name>
+              <remote-alias>PAIS</remote-alias>
+              <ordinal>21</ordinal>
+              <family>Sheet1</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LES_RES_S2' />
+              <object-id>[Sheet1_564E4D2B25C44FD5B79B51BAF1612D14]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>PROVINCIA</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[PROVINCIA]</local-name>
+              <parent-name>[Sheet1_564E4D2B25C44FD5B79B51BAF1612D14]</parent-name>
+              <remote-alias>PROVINCIA</remote-alias>
+              <ordinal>22</ordinal>
+              <family>Sheet1</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LES_RES_S2' />
+              <object-id>[Sheet1_564E4D2B25C44FD5B79B51BAF1612D14]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>ID</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[ID]</local-name>
+              <parent-name>[Sheet1_564E4D2B25C44FD5B79B51BAF1612D14]</parent-name>
+              <remote-alias>ID</remote-alias>
+              <ordinal>23</ordinal>
+              <family>Sheet1</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Sheet1_564E4D2B25C44FD5B79B51BAF1612D14]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>F1</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[F1]</local-name>
+              <parent-name>[df!importance_1E234CF6D49D4F3C9239A81B335797EB]</parent-name>
+              <remote-alias>F1</remote-alias>
+              <ordinal>24</ordinal>
+              <family>df_importance</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>10</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LES_RES_S2' />
+              <object-id>[df!importance_1E234CF6D49D4F3C9239A81B335797EB]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>monoxido_nitrogeno</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[monoxido_nitrogeno (df!importance)]</local-name>
+              <parent-name>[df!importance_1E234CF6D49D4F3C9239A81B335797EB]</parent-name>
+              <remote-alias>monoxido_nitrogeno</remote-alias>
+              <ordinal>25</ordinal>
+              <family>df_importance</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>10</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[df!importance_1E234CF6D49D4F3C9239A81B335797EB]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>dioxido_nitrogeno</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[dioxido_nitrogeno (df!importance)]</local-name>
+              <parent-name>[df!importance_1E234CF6D49D4F3C9239A81B335797EB]</parent-name>
+              <remote-alias>dioxido_nitrogeno</remote-alias>
+              <ordinal>26</ordinal>
+              <family>df_importance</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>8</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[df!importance_1E234CF6D49D4F3C9239A81B335797EB]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>oxido_nitrogeno</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[oxido_nitrogeno (df!importance)]</local-name>
+              <parent-name>[df!importance_1E234CF6D49D4F3C9239A81B335797EB]</parent-name>
+              <remote-alias>oxido_nitrogeno</remote-alias>
+              <ordinal>27</ordinal>
+              <family>df_importance</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>10</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[df!importance_1E234CF6D49D4F3C9239A81B335797EB]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>ozono</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[ozono (df!importance)]</local-name>
+              <parent-name>[df!importance_1E234CF6D49D4F3C9239A81B335797EB]</parent-name>
+              <remote-alias>ozono</remote-alias>
+              <ordinal>28</ordinal>
+              <family>df_importance</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>8</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[df!importance_1E234CF6D49D4F3C9239A81B335797EB]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout common-percentage='0.917197' dim-ordering='alphabetic' measure-ordering='alphabetic' parameter-percentage='0.0828025' show-structure='true' user-set-layout-v2='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:F1:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;imp_año&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;imp_mes&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;imp_humedad_rel&quot;</bucket>
+            </map>
+            <map to='#9c755f'>
+              <bucket>&quot;imp_vel_viento&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;imp_presion_barometrica&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;r2&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;imp_estacion&quot;</bucket>
+            </map>
+            <map to='#edc948'>
+              <bucket>&quot;imp_precipitacion&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;imp_dir_viento&quot;</bucket>
+            </map>
+            <map to='#ff9da7'>
+              <bucket>&quot;imp_temperatura&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:dir_cardinal:nk]' palette='blue_teal_10_0' type='palette'>
+            <map to='#2c5985'>
+              <bucket>&quot;Suroeste&quot;</bucket>
+            </map>
+            <map to='#317097'>
+              <bucket>&quot;Sureste&quot;</bucket>
+            </map>
+            <map to='#3589a9'>
+              <bucket>&quot;Sur&quot;</bucket>
+            </map>
+            <map to='#45a2b9'>
+              <bucket>&quot;Oeste&quot;</bucket>
+            </map>
+            <map to='#6eb8c5'>
+              <bucket>&quot;Norte&quot;</bucket>
+            </map>
+            <map to='#93cdcf'>
+              <bucket>&quot;Noreste&quot;</bucket>
+            </map>
+            <map to='#bce4d8'>
+              <bucket>&quot;Este&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:ZIP CODE:ok]' palette='sf_default' type='palette'>
+            <map to='#1f77b4'>
+              <bucket>28011</bucket>
+            </map>
+            <map to='#9467bd'>
+              <bucket>28051</bucket>
+            </map>
+            <map to='#d62728'>
+              <bucket>28026</bucket>
+            </map>
+            <map to='#ffb03b'>
+              <bucket>28042</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:nombre_estacion:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;Casa de campo&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>%null%</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;Plaza Eliptica&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Parque Juan Carlos I&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Ensanche de Vallecas&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[:Measure Names]' palette='sf_dark' type='palette'>
+            <map to='#0e70c7'>
+              <bucket>&quot;[federated.0ikf9is0xv3orl10ghsow1717vhv].[sum:dioxido_nitrogeno (df!importance):qk]&quot;</bucket>
+            </map>
+            <map to='#3296ed'>
+              <bucket>&quot;[federated.0ikf9is0xv3orl10ghsow1717vhv].[sum:monoxido_nitrogeno (df!importance):qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0ikf9is0xv3orl10ghsow1717vhv].[__tableau_internal_object_id__].[cnt:df!importance_1E234CF6D49D4F3C9239A81B335797EB:qk]&quot;</bucket>
+            </map>
+            <map to='#7719e3'>
+              <bucket>&quot;[federated.0ikf9is0xv3orl10ghsow1717vhv].[sum:oxido_nitrogeno (df!importance):qk]&quot;</bucket>
+            </map>
+            <map to='#9d53f2'>
+              <bucket>&quot;[federated.0ikf9is0xv3orl10ghsow1717vhv].[sum:ozono (df!importance):qk]&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Estados Unidos&quot;' />
+      </semantic-values>
+      <date-options start-of-week='monday' />
+      <default-sorts>
+        <manual-sort column='[none:Forecast Indicator:nk]' direction='ASC'>
+          <dictionary>
+            <bucket>&quot;Real&quot;</bucket>
+            <bucket>&quot;Estimación&quot;</bucket>
+          </dictionary>
+        </manual-sort>
+      </default-sorts>
+      <object-graph>
+        <objects>
+          <object caption='Sheet1' id='Sheet1_564E4D2B25C44FD5B79B51BAF1612D14'>
+            <properties context=''>
+              <relation connection='excel-direct.1f1cw4j0pn3xmd1h8pf9908xy9ro' name='Sheet1' table='[Sheet1$]' type='table'>
+                <columns gridOrigin='A1:G5:no:A1:G5:0' header='yes' outcome='6'>
+                  <column datatype='string' name='ESTACIÓN' ordinal='0' />
+                  <column datatype='real' name='LATITUD' ordinal='1' />
+                  <column datatype='real' name='LONGITUD' ordinal='2' />
+                  <column datatype='integer' name='ZIP CODE' ordinal='3' />
+                  <column datatype='string' name='PAIS' ordinal='4' />
+                  <column datatype='string' name='PROVINCIA' ordinal='5' />
+                  <column datatype='integer' name='ID' ordinal='6' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Sheet1_564E4D2B25C44FD5B79B51BAF1612D14' table='[Extract].[Sheet1_564E4D2B25C44FD5B79B51BAF1612D14]' type='table' />
+            </properties>
+          </object>
+          <object caption='df_all_targets' id='df!all!targets_4F0E48EB143D41CAB061A2ACCB7869CB'>
+            <properties context=''>
+              <relation connection='excel-direct.0mrz8ux0d5krit1246w6n0wo9zvu' name='df_all_targets' table='[df_all_targets$]' type='table'>
+                <columns gridOrigin='A1:Q7301:no:A1:Q7301:0' header='yes' outcome='2'>
+                  <column datatype='date' name='fecha' ordinal='0' />
+                  <column datatype='integer' name='estacion' ordinal='1' />
+                  <column datatype='real' name='temperatura' ordinal='2' />
+                  <column datatype='real' name='precipitacion' ordinal='3' />
+                  <column datatype='real' name='vel_Viento' ordinal='4' />
+                  <column datatype='real' name='presion_barometrica' ordinal='5' />
+                  <column datatype='integer' name='dir_viento' ordinal='6' />
+                  <column datatype='integer' name='humedad_rel' ordinal='7' />
+                  <column datatype='integer' name='mes' ordinal='8' />
+                  <column datatype='integer' name='año' ordinal='9' />
+                  <column datatype='string' name='nombre_estacion' ordinal='10' />
+                  <column datatype='string' name='dir_cardinal' ordinal='11' />
+                  <column datatype='string' name='estacion_año' ordinal='12' />
+                  <column datatype='integer' name='monoxido_nitrogeno' ordinal='13' />
+                  <column datatype='integer' name='dioxido_nitrogeno' ordinal='14' />
+                  <column datatype='integer' name='oxido_nitrogeno' ordinal='15' />
+                  <column datatype='real' name='ozono' ordinal='16' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='df!all!targets_4F0E48EB143D41CAB061A2ACCB7869CB' table='[Extract].[df!all!targets_4F0E48EB143D41CAB061A2ACCB7869CB]' type='table' />
+            </properties>
+          </object>
+          <object caption='df_importance' id='df!importance_1E234CF6D49D4F3C9239A81B335797EB'>
+            <properties context=''>
+              <relation connection='excel-direct.1euts0s0t0m1ly1c81pzr0sxbnep' name='df_importance' table='[df_importance$]' type='table'>
+                <columns gridOrigin='A1:E11:no:A1:E11:0' header='yes' outcome='6'>
+                  <column datatype='string' name='F1' ordinal='0' />
+                  <column datatype='real' name='monoxido_nitrogeno' ordinal='1' />
+                  <column datatype='real' name='dioxido_nitrogeno' ordinal='2' />
+                  <column datatype='real' name='oxido_nitrogeno' ordinal='3' />
+                  <column datatype='real' name='ozono' ordinal='4' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='df!importance_1E234CF6D49D4F3C9239A81B335797EB' table='[Extract].[df!importance_1E234CF6D49D4F3C9239A81B335797EB]' type='table' />
+            </properties>
+          </object>
+        </objects>
+        <relationships>
+          <relationship>
+            <expression op='='>
+              <expression op='[estacion]' />
+              <expression op='[ID]' />
+            </expression>
+            <first-end-point object-id='df!all!targets_4F0E48EB143D41CAB061A2ACCB7869CB' />
+            <second-end-point object-id='Sheet1_564E4D2B25C44FD5B79B51BAF1612D14' />
+          </relationship>
+          <relationship>
+            <expression op='='>
+              <expression op='[ozono]' />
+              <expression op='[ozono (df!importance)]' />
+            </expression>
+            <first-end-point object-id='df!all!targets_4F0E48EB143D41CAB061A2ACCB7869CB' />
+            <second-end-point object-id='df!importance_1E234CF6D49D4F3C9239A81B335797EB' />
+          </relationship>
+        </relationships>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <mapsources>
+    <mapsource name='Tableau' />
+  </mapsources>
+  <worksheets>
+    <worksheet name='Dispersion Ozono -HR'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1' fontcolor='#000000' fontname='Tableau Bold' fontsize='18'>Relación entre Ozono y la humedad relativa</run>
+            <run fontalignment='1' fontname='Tableau Semibold' fontsize='18'><![CDATA[ <[federated.0ikf9is0xv3orl10ghsow1717vhv].[yr:fecha:ok]>]]></run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='df_all_targets+ (Varias conexiones)' name='federated.0ikf9is0xv3orl10ghsow1717vhv' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0ikf9is0xv3orl10ghsow1717vhv'>
+            <column-instance column='[temperatura]' derivation='Attribute' name='[attr:temperatura:qk]' pivot='key' type='quantitative' />
+            <column caption='Fecha' datatype='date' name='[fecha]' role='dimension' type='ordinal' />
+            <column caption='Humedad Rel' datatype='integer' name='[humedad_rel]' role='measure' type='quantitative' />
+            <column caption='Nombre Estacion' datatype='string' name='[nombre_estacion]' role='dimension' type='nominal' />
+            <column-instance column='[humedad_rel]' derivation='None' name='[none:humedad_rel:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[nombre_estacion]' derivation='None' name='[none:nombre_estacion:nk]' pivot='key' type='nominal' />
+            <column-instance column='[ozono]' derivation='None' name='[none:ozono:qk]' pivot='key' type='quantitative' />
+            <column caption='Ozono' datatype='real' name='[ozono]' role='measure' type='quantitative' />
+            <column-instance column='[temperatura]' derivation='Sum' name='[sum:temperatura:qk]' pivot='key' type='quantitative' />
+            <column caption='Temperatura' datatype='real' name='[temperatura]' role='measure' type='quantitative' />
+            <column-instance column='[fecha]' derivation='Year' name='[yr:fecha:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='quantitative' column='[federated.0ikf9is0xv3orl10ghsow1717vhv].[sum:temperatura:qk]' included-values='all' />
+          <filter class='categorical' column='[federated.0ikf9is0xv3orl10ghsow1717vhv].[yr:fecha:ok]'>
+            <groupfilter function='member' level='[yr:fecha:ok]' member='2019' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0ikf9is0xv3orl10ghsow1717vhv].[yr:fecha:ok]</column>
+            <column>[federated.0ikf9is0xv3orl10ghsow1717vhv].[sum:temperatura:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.0ikf9is0xv3orl10ghsow1717vhv].[none:ozono:qk]' scope='rows' value='Ozono (µg/m³)' />
+            <format attr='title' class='0' field='[federated.0ikf9is0xv3orl10ghsow1717vhv].[none:humedad_rel:qk]' scope='cols' value='Humedad Rel (%)' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='color' field='[federated.0ikf9is0xv3orl10ghsow1717vhv].[none:ozono:qk]' value='#000000' />
+            <format attr='font-size' field='[federated.0ikf9is0xv3orl10ghsow1717vhv].[none:ozono:qk]' value='10' />
+            <format attr='font-family' field='[federated.0ikf9is0xv3orl10ghsow1717vhv].[none:ozono:qk]' value='Tableau Semibold' />
+            <format attr='font-weight' field='[federated.0ikf9is0xv3orl10ghsow1717vhv].[none:humedad_rel:qk]' value='bold' />
+            <format attr='font-size' field='[federated.0ikf9is0xv3orl10ghsow1717vhv].[none:humedad_rel:qk]' value='10' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='line-visibility' value='on' />
+            <format attr='line-pattern-only' value='solid' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.0ikf9is0xv3orl10ghsow1717vhv].[none:nombre_estacion:nk]' />
+              <lod column='[federated.0ikf9is0xv3orl10ghsow1717vhv].[none:nombre_estacion:nk]' />
+              <lod column='[federated.0ikf9is0xv3orl10ghsow1717vhv].[attr:temperatura:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='0.66966849565505981' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+                <format attr='shape' value=':filled/circle' />
+                <format attr='mark-transparency' value='255' />
+              </style-rule>
+              <style-rule element='trendline'>
+                <format attr='stroke-size' value='2' />
+                <format attr='stroke-color' value='#00000079' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0ikf9is0xv3orl10ghsow1717vhv].[none:ozono:qk]</rows>
+        <cols>[federated.0ikf9is0xv3orl10ghsow1717vhv].[none:humedad_rel:qk]</cols>
+      </table>
+      <simple-id uuid='{17B37293-DA84-4DD6-BB8C-5A7FF221DB3D}' />
+    </worksheet>
+    <worksheet name='Dispersion Ozono-Temp'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1' fontcolor='#000000' fontname='Tableau Bold' fontsize='18'>Relación entre los Niveles de Ozono y la Temperatura</run>
+            <run fontalignment='1' fontname='Tableau Semibold' fontsize='18'><![CDATA[ <[federated.0ikf9is0xv3orl10ghsow1717vhv].[yr:fecha:ok]>]]></run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='df_all_targets+ (Varias conexiones)' name='federated.0ikf9is0xv3orl10ghsow1717vhv' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0ikf9is0xv3orl10ghsow1717vhv'>
+            <column-instance column='[temperatura]' derivation='Attribute' name='[attr:temperatura:qk]' pivot='key' type='quantitative' />
+            <column caption='Fecha' datatype='date' name='[fecha]' role='dimension' type='ordinal' />
+            <column caption='Nombre Estacion' datatype='string' name='[nombre_estacion]' role='dimension' type='nominal' />
+            <column-instance column='[nombre_estacion]' derivation='None' name='[none:nombre_estacion:nk]' pivot='key' type='nominal' />
+            <column-instance column='[ozono]' derivation='None' name='[none:ozono:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[temperatura]' derivation='None' name='[none:temperatura:qk]' pivot='key' type='quantitative' />
+            <column caption='Ozono' datatype='real' name='[ozono]' role='measure' type='quantitative' />
+            <column-instance column='[temperatura]' derivation='Sum' name='[sum:temperatura:qk]' pivot='key' type='quantitative' />
+            <column caption='Temperatura' datatype='real' name='[temperatura]' role='measure' type='quantitative' />
+            <column-instance column='[fecha]' derivation='Year' name='[yr:fecha:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='quantitative' column='[federated.0ikf9is0xv3orl10ghsow1717vhv].[sum:temperatura:qk]' included-values='all' />
+          <filter class='categorical' column='[federated.0ikf9is0xv3orl10ghsow1717vhv].[yr:fecha:ok]'>
+            <groupfilter function='member' level='[yr:fecha:ok]' member='2022' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0ikf9is0xv3orl10ghsow1717vhv].[yr:fecha:ok]</column>
+            <column>[federated.0ikf9is0xv3orl10ghsow1717vhv].[sum:temperatura:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.0ikf9is0xv3orl10ghsow1717vhv].[none:ozono:qk]' scope='rows' value='Ozono (µg/m³)' />
+            <format attr='title' class='0' field='[federated.0ikf9is0xv3orl10ghsow1717vhv].[none:temperatura:qk]' scope='cols' value='Temperatura (C)' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='font-size' field='[federated.0ikf9is0xv3orl10ghsow1717vhv].[none:temperatura:qk]' value='10' />
+            <format attr='font-weight' field='[federated.0ikf9is0xv3orl10ghsow1717vhv].[none:temperatura:qk]' value='bold' />
+            <format attr='font-size' field='[federated.0ikf9is0xv3orl10ghsow1717vhv].[none:ozono:qk]' value='10' />
+            <format attr='font-family' field='[federated.0ikf9is0xv3orl10ghsow1717vhv].[none:ozono:qk]' value='Tableau Semibold' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='line-visibility' value='on' />
+            <format attr='line-pattern-only' value='solid' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.0ikf9is0xv3orl10ghsow1717vhv].[none:nombre_estacion:nk]' />
+              <lod column='[federated.0ikf9is0xv3orl10ghsow1717vhv].[none:nombre_estacion:nk]' />
+              <lod column='[federated.0ikf9is0xv3orl10ghsow1717vhv].[attr:temperatura:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='0.66966849565505981' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+                <format attr='shape' value=':filled/circle' />
+                <format attr='mark-transparency' value='255' />
+              </style-rule>
+              <style-rule element='trendline'>
+                <format attr='stroke-size' value='2' />
+                <format attr='stroke-color' value='#00000079' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0ikf9is0xv3orl10ghsow1717vhv].[none:ozono:qk]</rows>
+        <cols>[federated.0ikf9is0xv3orl10ghsow1717vhv].[none:temperatura:qk]</cols>
+      </table>
+      <simple-id uuid='{EE825984-E803-49DB-93B2-38F3E10F1DD9}' />
+    </worksheet>
+    <worksheet name='Hoja 1'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1' fontname='Tableau Semibold' fontsize='22'><![CDATA[Promedio monoxido de nitrogeno diario por cuatrimestre <[federated.0ikf9is0xv3orl10ghsow1717vhv].[yr:fecha:ok]>, <[federated.0ikf9is0xv3orl10ghsow1717vhv].[none:nombre_estacion:nk]>]]></run>
+            <run fontalignment='1'>Æ&#10;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='df_all_targets+ (Varias conexiones)' name='federated.0ikf9is0xv3orl10ghsow1717vhv' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0ikf9is0xv3orl10ghsow1717vhv'>
+            <column aggregation='Sum' caption='Col index' datatype='integer' name='[Calculation_815714499501019136]' role='dimension' type='ordinal'>
+              <calculation class='tableau' formula='Case MONTH([fecha])&#13;&#10;When 1 Then 1&#13;&#10;When 2 Then 2&#13;&#10;When 3 Then 3&#13;&#10;When 4 Then 1&#13;&#10;When 5 Then 2&#13;&#10;When 6 Then 3&#13;&#10;When 7 Then 1&#13;&#10;When 8 Then 2&#13;&#10;When 9 Then 3&#13;&#10;When 10 Then 1&#13;&#10;When 11 Then 2&#13;&#10;When 12 Then 3&#13;&#10;END' />
+            </column>
+            <column aggregation='Sum' caption='Row index' datatype='integer' name='[Calculation_815714499501654017]' role='dimension' type='ordinal'>
+              <calculation class='tableau' formula='DATEPART(&apos;week&apos;,[fecha]) - {FIXED  DATEPART(&apos;month&apos;,[fecha]): MIN(DATEPART(&apos;week&apos;,[fecha]))}' />
+            </column>
+            <column-instance column='[monoxido_nitrogeno]' derivation='Avg' name='[avg:monoxido_nitrogeno:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[fecha]' derivation='Day' name='[dy:fecha:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[monoxido_nitrogeno]' derivation='Avg' forecast-column-base='[avg:monoxido_nitrogeno:qk]' forecast-column-type='forecast-value' name='[fVal:avg:monoxido_nitrogeno:qk]' pivot='key' type='quantitative' />
+            <column caption='Fecha' datatype='date' name='[fecha]' role='dimension' type='ordinal' />
+            <column caption='Monoxido Nitrogeno' datatype='integer' name='[monoxido_nitrogeno]' role='measure' type='quantitative' />
+            <column caption='Nombre Estacion' datatype='string' name='[nombre_estacion]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_815714499501019136]' derivation='None' name='[none:Calculation_815714499501019136:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Calculation_815714499501654017]' derivation='None' name='[none:Calculation_815714499501654017:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[nombre_estacion]' derivation='None' name='[none:nombre_estacion:nk]' pivot='key' type='nominal' />
+            <column-instance column='[fecha]' derivation='Quarter' name='[qr:fecha:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[fecha]' derivation='Weekday' name='[wd:fecha:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[fecha]' derivation='Year' name='[yr:fecha:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0ikf9is0xv3orl10ghsow1717vhv].[dy:fecha:ok]'>
+            <groupfilter function='level-members' level='[dy:fecha:ok]' />
+          </filter>
+          <filter class='categorical' column='[federated.0ikf9is0xv3orl10ghsow1717vhv].[none:nombre_estacion:nk]'>
+            <groupfilter function='member' level='[none:nombre_estacion:nk]' member='&quot;Casa de campo&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0ikf9is0xv3orl10ghsow1717vhv].[yr:fecha:ok]'>
+            <groupfilter function='member' level='[yr:fecha:ok]' member='2020' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0ikf9is0xv3orl10ghsow1717vhv].[yr:fecha:ok]</column>
+            <column>[federated.0ikf9is0xv3orl10ghsow1717vhv].[none:nombre_estacion:nk]</column>
+            <column>[federated.0ikf9is0xv3orl10ghsow1717vhv].[dy:fecha:ok]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='border-color' scope='rows' value='#ffffff' />
+            <format attr='border-width' scope='rows' value='1' />
+            <format attr='border-style' scope='rows' value='solid' />
+            <format attr='border-color' scope='cols' value='#ffffff' />
+            <format attr='border-style' scope='cols' value='solid' />
+            <format attr='font-family' field='[federated.0ikf9is0xv3orl10ghsow1717vhv].[wd:fecha:ok]' value='Tableau Medium' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='display' field='[federated.0ikf9is0xv3orl10ghsow1717vhv].[none:Calculation_815714499501654017:ok]' value='false' />
+            <format attr='display' field='[federated.0ikf9is0xv3orl10ghsow1717vhv].[none:Calculation_815714499501019136:ok]' value='false' />
+            <format attr='text-align' field='[federated.0ikf9is0xv3orl10ghsow1717vhv].[wd:fecha:ok]' value='center' />
+            <format attr='font-weight' scope='cols' value='bold' />
+            <format attr='color' scope='cols' value='#555555' />
+            <format attr='text-format' field='[federated.0ikf9is0xv3orl10ghsow1717vhv].[wd:fecha:ok]' value='ieeeee' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.0ikf9is0xv3orl10ghsow1717vhv].[fVal:avg:monoxido_nitrogeno:qk]' max='50.0' num-steps='10' palette='tableau-map-temperatur' type='interpolated' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='show-null-value-warning' value='false' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='cols' value='false' />
+            <format attr='display-field-labels' scope='rows' value='false' />
+          </style-rule>
+          <style-rule element='table-div'>
+            <format attr='stroke-size' scope='rows' value='5' />
+            <format attr='stroke-size' scope='cols' value='5' />
+            <format attr='stroke-color' scope='cols' value='#ffffff' />
+            <format attr='stroke-color' scope='rows' value='#ffffff' />
+            <format attr='div-level' scope='cols' value='1' />
+            <format attr='div-level' scope='rows' value='0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Square' />
+            <encodings>
+              <color column='[federated.0ikf9is0xv3orl10ghsow1717vhv].[fVal:avg:monoxido_nitrogeno:qk]' />
+              <text column='[federated.0ikf9is0xv3orl10ghsow1717vhv].[dy:fecha:ok]' />
+            </encodings>
+            <customized-label>
+              <formatted-text>
+                <run fontsize='7'>&lt;</run>
+                <run fontsize='7'>[federated.0ikf9is0xv3orl10ghsow1717vhv].[dy:fecha:ok]</run>
+                <run fontsize='7'>&gt;</run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='cell'>
+                <format attr='vertical-align' value='top' />
+                <format attr='text-align' value='right' />
+                <format attr='wrap' value='auto' />
+              </style-rule>
+              <style-rule element='datalabel'>
+                <format attr='color-mode' value='auto' />
+                <format attr='font-weight' value='bold' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-line-first' value='true' />
+                <format attr='mark-labels-line-last' value='true' />
+                <format attr='mark-labels-range-min' value='true' />
+                <format attr='mark-labels-range-max' value='true' />
+                <format attr='mark-labels-mode' value='all' />
+                <format attr='mark-labels-range-scope' value='pane' />
+                <format attr='mark-labels-range-field' value='' />
+                <format attr='mark-labels-show' value='true' />
+                <format attr='has-stroke' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.0ikf9is0xv3orl10ghsow1717vhv].[qr:fecha:ok] / [federated.0ikf9is0xv3orl10ghsow1717vhv].[none:Calculation_815714499501654017:ok])</rows>
+        <cols>([federated.0ikf9is0xv3orl10ghsow1717vhv].[none:Calculation_815714499501019136:ok] / [federated.0ikf9is0xv3orl10ghsow1717vhv].[wd:fecha:ok])</cols>
+        <forecast-specification auto-forecast-agg='true' band-confidence-level='95.000000' enabled='true' fill-type='fill-missing' ignore-last='1' model-type='auto-season' range-type='auto' show-prediction-bands='true' />
+      </table>
+      <simple-id uuid='{C0F79EE6-033A-4B00-9432-EE7077FFF262}' />
+    </worksheet>
+    <worksheet name='Hoja 1 (2)'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1' fontname='Tableau Semibold' fontsize='22'><![CDATA[Promedio ozono diario por cuatrimestre <[federated.0ikf9is0xv3orl10ghsow1717vhv].[yr:fecha:ok]>, <[federated.0ikf9is0xv3orl10ghsow1717vhv].[none:nombre_estacion:nk]>]]></run>
+            <run fontalignment='1'>Æ&#10;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='df_all_targets+ (Varias conexiones)' name='federated.0ikf9is0xv3orl10ghsow1717vhv' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0ikf9is0xv3orl10ghsow1717vhv'>
+            <column aggregation='Sum' caption='Col index' datatype='integer' name='[Calculation_815714499501019136]' role='dimension' type='ordinal'>
+              <calculation class='tableau' formula='Case MONTH([fecha])&#13;&#10;When 1 Then 1&#13;&#10;When 2 Then 2&#13;&#10;When 3 Then 3&#13;&#10;When 4 Then 1&#13;&#10;When 5 Then 2&#13;&#10;When 6 Then 3&#13;&#10;When 7 Then 1&#13;&#10;When 8 Then 2&#13;&#10;When 9 Then 3&#13;&#10;When 10 Then 1&#13;&#10;When 11 Then 2&#13;&#10;When 12 Then 3&#13;&#10;END' />
+            </column>
+            <column aggregation='Sum' caption='Row index' datatype='integer' name='[Calculation_815714499501654017]' role='dimension' type='ordinal'>
+              <calculation class='tableau' formula='DATEPART(&apos;week&apos;,[fecha]) - {FIXED  DATEPART(&apos;month&apos;,[fecha]): MIN(DATEPART(&apos;week&apos;,[fecha]))}' />
+            </column>
+            <column-instance column='[ozono]' derivation='Avg' name='[avg:ozono:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[fecha]' derivation='Day' name='[dy:fecha:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[ozono]' derivation='Avg' forecast-column-base='[avg:ozono:qk]' forecast-column-type='forecast-value' name='[fVal:avg:ozono:qk]' pivot='key' type='quantitative' />
+            <column caption='Fecha' datatype='date' name='[fecha]' role='dimension' type='ordinal' />
+            <column caption='Nombre Estacion' datatype='string' name='[nombre_estacion]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_815714499501019136]' derivation='None' name='[none:Calculation_815714499501019136:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Calculation_815714499501654017]' derivation='None' name='[none:Calculation_815714499501654017:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[nombre_estacion]' derivation='None' name='[none:nombre_estacion:nk]' pivot='key' type='nominal' />
+            <column caption='Ozono' datatype='real' name='[ozono]' role='measure' type='quantitative' />
+            <column-instance column='[fecha]' derivation='Quarter' name='[qr:fecha:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[fecha]' derivation='Weekday' name='[wd:fecha:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[fecha]' derivation='Year' name='[yr:fecha:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0ikf9is0xv3orl10ghsow1717vhv].[none:nombre_estacion:nk]'>
+            <groupfilter function='member' level='[none:nombre_estacion:nk]' member='&quot;Casa de campo&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0ikf9is0xv3orl10ghsow1717vhv].[yr:fecha:ok]'>
+            <groupfilter function='member' level='[yr:fecha:ok]' member='2021' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0ikf9is0xv3orl10ghsow1717vhv].[yr:fecha:ok]</column>
+            <column>[federated.0ikf9is0xv3orl10ghsow1717vhv].[none:nombre_estacion:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='border-color' scope='rows' value='#ffffff' />
+            <format attr='border-width' scope='rows' value='1' />
+            <format attr='border-style' scope='rows' value='solid' />
+            <format attr='border-color' scope='cols' value='#ffffff' />
+            <format attr='border-style' scope='cols' value='solid' />
+            <format attr='font-family' field='[federated.0ikf9is0xv3orl10ghsow1717vhv].[wd:fecha:ok]' value='Tableau Medium' />
+          </style-rule>
+          <style-rule element='field-labels'>
+            <format attr='font-size' value='14' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='display' field='[federated.0ikf9is0xv3orl10ghsow1717vhv].[none:Calculation_815714499501654017:ok]' value='false' />
+            <format attr='display' field='[federated.0ikf9is0xv3orl10ghsow1717vhv].[none:Calculation_815714499501019136:ok]' value='false' />
+            <format attr='text-align' field='[federated.0ikf9is0xv3orl10ghsow1717vhv].[wd:fecha:ok]' value='center' />
+            <format attr='font-weight' scope='cols' value='bold' />
+            <format attr='color' scope='cols' value='#555555' />
+            <format attr='text-format' field='[federated.0ikf9is0xv3orl10ghsow1717vhv].[wd:fecha:ok]' value='ieeeee' />
+            <format attr='text-orientation' field='[federated.0ikf9is0xv3orl10ghsow1717vhv].[qr:fecha:ok]' value='-90' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.0ikf9is0xv3orl10ghsow1717vhv].[fVal:avg:ozono:qk]' num-steps='10' palette='tableau-map-temperatur' type='interpolated' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='show-null-value-warning' value='false' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='cols' value='false' />
+            <format attr='display-field-labels' scope='rows' value='false' />
+          </style-rule>
+          <style-rule element='table-div'>
+            <format attr='stroke-size' scope='rows' value='5' />
+            <format attr='stroke-size' scope='cols' value='5' />
+            <format attr='stroke-color' scope='cols' value='#ffffff' />
+            <format attr='stroke-color' scope='rows' value='#ffffff' />
+            <format attr='div-level' scope='cols' value='1' />
+            <format attr='div-level' scope='rows' value='0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Square' />
+            <encodings>
+              <color column='[federated.0ikf9is0xv3orl10ghsow1717vhv].[fVal:avg:ozono:qk]' />
+              <text column='[federated.0ikf9is0xv3orl10ghsow1717vhv].[dy:fecha:ok]' />
+            </encodings>
+            <customized-label>
+              <formatted-text>
+                <run fontsize='7'>&lt;</run>
+                <run fontsize='7'>[federated.0ikf9is0xv3orl10ghsow1717vhv].[dy:fecha:ok]</run>
+                <run fontsize='7'>&gt;</run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='cell'>
+                <format attr='vertical-align' value='top' />
+                <format attr='text-align' value='right' />
+                <format attr='wrap' value='auto' />
+              </style-rule>
+              <style-rule element='datalabel'>
+                <format attr='color-mode' value='auto' />
+                <format attr='font-weight' value='bold' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-line-first' value='true' />
+                <format attr='mark-labels-line-last' value='true' />
+                <format attr='mark-labels-range-min' value='true' />
+                <format attr='mark-labels-range-max' value='true' />
+                <format attr='mark-labels-mode' value='all' />
+                <format attr='mark-labels-range-scope' value='pane' />
+                <format attr='mark-labels-range-field' value='' />
+                <format attr='has-stroke' value='false' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.0ikf9is0xv3orl10ghsow1717vhv].[qr:fecha:ok] / [federated.0ikf9is0xv3orl10ghsow1717vhv].[none:Calculation_815714499501654017:ok])</rows>
+        <cols>([federated.0ikf9is0xv3orl10ghsow1717vhv].[none:Calculation_815714499501019136:ok] / [federated.0ikf9is0xv3orl10ghsow1717vhv].[wd:fecha:ok])</cols>
+        <forecast-specification auto-forecast-agg='true' band-confidence-level='95.000000' enabled='true' fill-type='fill-missing' ignore-last='1' model-type='auto-season' range-type='auto' show-prediction-bands='true' />
+      </table>
+      <simple-id uuid='{A26BFC2C-3C2E-424D-AFEC-9E88EE1107A6}' />
+    </worksheet>
+    <worksheet name='Hoja 1 (3)'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1' fontname='Tableau Semibold' fontsize='22'><![CDATA[Promedio dióxido de nitrogeno diario por cuatrimestre <]]></run>
+            <run fontalignment='1' fontname='Tableau Semibold' fontsize='22'>[federated.0ikf9is0xv3orl10ghsow1717vhv].[yr:fecha:ok]</run>
+            <run fontalignment='1' fontname='Tableau Semibold' fontsize='22'>&gt;, &lt;</run>
+            <run fontalignment='1' fontname='Tableau Semibold' fontsize='22'>[federated.0ikf9is0xv3orl10ghsow1717vhv].[none:nombre_estacion:nk]</run>
+            <run fontalignment='1' fontname='Tableau Semibold' fontsize='22'>&gt;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='df_all_targets+ (Varias conexiones)' name='federated.0ikf9is0xv3orl10ghsow1717vhv' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0ikf9is0xv3orl10ghsow1717vhv'>
+            <column aggregation='Sum' caption='Col index' datatype='integer' name='[Calculation_815714499501019136]' role='dimension' type='ordinal'>
+              <calculation class='tableau' formula='Case MONTH([fecha])&#13;&#10;When 1 Then 1&#13;&#10;When 2 Then 2&#13;&#10;When 3 Then 3&#13;&#10;When 4 Then 1&#13;&#10;When 5 Then 2&#13;&#10;When 6 Then 3&#13;&#10;When 7 Then 1&#13;&#10;When 8 Then 2&#13;&#10;When 9 Then 3&#13;&#10;When 10 Then 1&#13;&#10;When 11 Then 2&#13;&#10;When 12 Then 3&#13;&#10;END' />
+            </column>
+            <column aggregation='Sum' caption='Row index' datatype='integer' name='[Calculation_815714499501654017]' role='dimension' type='ordinal'>
+              <calculation class='tableau' formula='DATEPART(&apos;week&apos;,[fecha]) - {FIXED  DATEPART(&apos;month&apos;,[fecha]): MIN(DATEPART(&apos;week&apos;,[fecha]))}' />
+            </column>
+            <column-instance column='[dioxido_nitrogeno]' derivation='Avg' name='[avg:dioxido_nitrogeno:qk]' pivot='key' type='quantitative' />
+            <column caption='Dioxido Nitrogeno' datatype='integer' name='[dioxido_nitrogeno]' role='measure' type='quantitative' />
+            <column-instance column='[fecha]' derivation='Day' name='[dy:fecha:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[dioxido_nitrogeno]' derivation='Avg' forecast-column-base='[avg:dioxido_nitrogeno:qk]' forecast-column-type='forecast-value' name='[fVal:avg:dioxido_nitrogeno:qk]' pivot='key' type='quantitative' />
+            <column caption='Fecha' datatype='date' name='[fecha]' role='dimension' type='ordinal' />
+            <column caption='Nombre Estacion' datatype='string' name='[nombre_estacion]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_815714499501019136]' derivation='None' name='[none:Calculation_815714499501019136:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Calculation_815714499501654017]' derivation='None' name='[none:Calculation_815714499501654017:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[nombre_estacion]' derivation='None' name='[none:nombre_estacion:nk]' pivot='key' type='nominal' />
+            <column-instance column='[fecha]' derivation='Quarter' name='[qr:fecha:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[fecha]' derivation='Weekday' name='[wd:fecha:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[fecha]' derivation='Year' name='[yr:fecha:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0ikf9is0xv3orl10ghsow1717vhv].[none:nombre_estacion:nk]'>
+            <groupfilter function='member' level='[none:nombre_estacion:nk]' member='&quot;Parque Juan Carlos I&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0ikf9is0xv3orl10ghsow1717vhv].[yr:fecha:ok]'>
+            <groupfilter function='member' level='[yr:fecha:ok]' member='2020' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0ikf9is0xv3orl10ghsow1717vhv].[yr:fecha:ok]</column>
+            <column>[federated.0ikf9is0xv3orl10ghsow1717vhv].[none:nombre_estacion:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='border-color' scope='rows' value='#ffffff' />
+            <format attr='border-width' scope='rows' value='1' />
+            <format attr='border-style' scope='rows' value='solid' />
+            <format attr='border-color' scope='cols' value='#ffffff' />
+            <format attr='border-style' scope='cols' value='solid' />
+            <format attr='font-family' field='[federated.0ikf9is0xv3orl10ghsow1717vhv].[wd:fecha:ok]' value='Tableau Medium' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='display' field='[federated.0ikf9is0xv3orl10ghsow1717vhv].[none:Calculation_815714499501654017:ok]' value='false' />
+            <format attr='display' field='[federated.0ikf9is0xv3orl10ghsow1717vhv].[none:Calculation_815714499501019136:ok]' value='false' />
+            <format attr='text-align' field='[federated.0ikf9is0xv3orl10ghsow1717vhv].[wd:fecha:ok]' value='center' />
+            <format attr='font-weight' scope='cols' value='bold' />
+            <format attr='color' scope='cols' value='#555555' />
+            <format attr='text-format' field='[federated.0ikf9is0xv3orl10ghsow1717vhv].[wd:fecha:ok]' value='ieeeee' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.0ikf9is0xv3orl10ghsow1717vhv].[fVal:avg:dioxido_nitrogeno:qk]' num-steps='10' palette='tableau-map-temperatur' type='interpolated' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='show-null-value-warning' value='false' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='cols' value='false' />
+            <format attr='display-field-labels' scope='rows' value='false' />
+          </style-rule>
+          <style-rule element='table-div'>
+            <format attr='stroke-size' scope='rows' value='5' />
+            <format attr='stroke-size' scope='cols' value='5' />
+            <format attr='stroke-color' scope='cols' value='#ffffff' />
+            <format attr='stroke-color' scope='rows' value='#ffffff' />
+            <format attr='div-level' scope='cols' value='1' />
+            <format attr='div-level' scope='rows' value='0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Square' />
+            <encodings>
+              <color column='[federated.0ikf9is0xv3orl10ghsow1717vhv].[fVal:avg:dioxido_nitrogeno:qk]' />
+              <text column='[federated.0ikf9is0xv3orl10ghsow1717vhv].[dy:fecha:ok]' />
+            </encodings>
+            <customized-label>
+              <formatted-text>
+                <run fontsize='7'>&lt;</run>
+                <run fontsize='7'>[federated.0ikf9is0xv3orl10ghsow1717vhv].[dy:fecha:ok]</run>
+                <run fontsize='7'>&gt;</run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='cell'>
+                <format attr='vertical-align' value='top' />
+                <format attr='text-align' value='right' />
+                <format attr='wrap' value='auto' />
+              </style-rule>
+              <style-rule element='datalabel'>
+                <format attr='color-mode' value='auto' />
+                <format attr='font-weight' value='bold' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-line-first' value='true' />
+                <format attr='mark-labels-line-last' value='true' />
+                <format attr='mark-labels-range-min' value='true' />
+                <format attr='mark-labels-range-max' value='true' />
+                <format attr='mark-labels-mode' value='all' />
+                <format attr='mark-labels-range-scope' value='pane' />
+                <format attr='mark-labels-range-field' value='' />
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-transparency' value='255' />
+                <format attr='has-stroke' value='true' />
+                <format attr='stroke-color' value='#1b1b1b' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.0ikf9is0xv3orl10ghsow1717vhv].[qr:fecha:ok] / [federated.0ikf9is0xv3orl10ghsow1717vhv].[none:Calculation_815714499501654017:ok])</rows>
+        <cols>([federated.0ikf9is0xv3orl10ghsow1717vhv].[none:Calculation_815714499501019136:ok] / [federated.0ikf9is0xv3orl10ghsow1717vhv].[wd:fecha:ok])</cols>
+        <forecast-specification auto-forecast-agg='true' band-confidence-level='95.000000' enabled='true' fill-type='fill-missing' ignore-last='1' model-type='auto-season' range-type='auto' show-prediction-bands='true' />
+      </table>
+      <simple-id uuid='{B9165DE6-1565-42A6-B3C0-0E4BD5D68216}' />
+    </worksheet>
+    <worksheet name='Hoja 1 (4)'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1' fontname='Tableau Semibold' fontsize='22'><![CDATA[Promedio óxidos de nitrogeno diario por cuatrimestre <[federated.0ikf9is0xv3orl10ghsow1717vhv].[yr:fecha:ok]>, <[federated.0ikf9is0xv3orl10ghsow1717vhv].[none:nombre_estacion:nk]>]]></run>
+            <run fontalignment='1'>Æ&#10;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='df_all_targets+ (Varias conexiones)' name='federated.0ikf9is0xv3orl10ghsow1717vhv' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0ikf9is0xv3orl10ghsow1717vhv'>
+            <column aggregation='Sum' caption='Col index' datatype='integer' name='[Calculation_815714499501019136]' role='dimension' type='ordinal'>
+              <calculation class='tableau' formula='Case MONTH([fecha])&#13;&#10;When 1 Then 1&#13;&#10;When 2 Then 2&#13;&#10;When 3 Then 3&#13;&#10;When 4 Then 1&#13;&#10;When 5 Then 2&#13;&#10;When 6 Then 3&#13;&#10;When 7 Then 1&#13;&#10;When 8 Then 2&#13;&#10;When 9 Then 3&#13;&#10;When 10 Then 1&#13;&#10;When 11 Then 2&#13;&#10;When 12 Then 3&#13;&#10;END' />
+            </column>
+            <column aggregation='Sum' caption='Row index' datatype='integer' name='[Calculation_815714499501654017]' role='dimension' type='ordinal'>
+              <calculation class='tableau' formula='DATEPART(&apos;week&apos;,[fecha]) - {FIXED  DATEPART(&apos;month&apos;,[fecha]): MIN(DATEPART(&apos;week&apos;,[fecha]))}' />
+            </column>
+            <column-instance column='[oxido_nitrogeno]' derivation='Avg' name='[avg:oxido_nitrogeno:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[fecha]' derivation='Day' name='[dy:fecha:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[oxido_nitrogeno]' derivation='Avg' forecast-column-base='[avg:oxido_nitrogeno:qk]' forecast-column-type='forecast-value' name='[fVal:avg:oxido_nitrogeno:qk]' pivot='key' type='quantitative' />
+            <column caption='Fecha' datatype='date' name='[fecha]' role='dimension' type='ordinal' />
+            <column caption='Nombre Estacion' datatype='string' name='[nombre_estacion]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_815714499501019136]' derivation='None' name='[none:Calculation_815714499501019136:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Calculation_815714499501654017]' derivation='None' name='[none:Calculation_815714499501654017:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[nombre_estacion]' derivation='None' name='[none:nombre_estacion:nk]' pivot='key' type='nominal' />
+            <column caption='Oxido Nitrogeno' datatype='integer' name='[oxido_nitrogeno]' role='measure' type='quantitative' />
+            <column-instance column='[fecha]' derivation='Quarter' name='[qr:fecha:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[fecha]' derivation='Weekday' name='[wd:fecha:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[fecha]' derivation='Year' name='[yr:fecha:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0ikf9is0xv3orl10ghsow1717vhv].[none:nombre_estacion:nk]'>
+            <groupfilter function='member' level='[none:nombre_estacion:nk]' member='&quot;Parque Juan Carlos I&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0ikf9is0xv3orl10ghsow1717vhv].[yr:fecha:ok]'>
+            <groupfilter function='member' level='[yr:fecha:ok]' member='2020' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0ikf9is0xv3orl10ghsow1717vhv].[yr:fecha:ok]</column>
+            <column>[federated.0ikf9is0xv3orl10ghsow1717vhv].[none:nombre_estacion:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='border-color' scope='rows' value='#ffffff' />
+            <format attr='border-width' scope='rows' value='1' />
+            <format attr='border-style' scope='rows' value='solid' />
+            <format attr='border-color' scope='cols' value='#ffffff' />
+            <format attr='border-style' scope='cols' value='solid' />
+            <format attr='font-family' field='[federated.0ikf9is0xv3orl10ghsow1717vhv].[wd:fecha:ok]' value='Tableau Medium' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='display' field='[federated.0ikf9is0xv3orl10ghsow1717vhv].[none:Calculation_815714499501654017:ok]' value='false' />
+            <format attr='display' field='[federated.0ikf9is0xv3orl10ghsow1717vhv].[none:Calculation_815714499501019136:ok]' value='false' />
+            <format attr='text-align' field='[federated.0ikf9is0xv3orl10ghsow1717vhv].[wd:fecha:ok]' value='center' />
+            <format attr='font-weight' scope='cols' value='bold' />
+            <format attr='color' scope='cols' value='#555555' />
+            <format attr='text-format' field='[federated.0ikf9is0xv3orl10ghsow1717vhv].[wd:fecha:ok]' value='ieeeee' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.0ikf9is0xv3orl10ghsow1717vhv].[fVal:avg:oxido_nitrogeno:qk]' num-steps='5' palette='tableau-map-temperatur' type='interpolated' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='show-null-value-warning' value='false' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='cols' value='false' />
+            <format attr='display-field-labels' scope='rows' value='false' />
+          </style-rule>
+          <style-rule element='table-div'>
+            <format attr='stroke-size' scope='rows' value='5' />
+            <format attr='stroke-size' scope='cols' value='5' />
+            <format attr='stroke-color' scope='cols' value='#ffffff' />
+            <format attr='stroke-color' scope='rows' value='#ffffff' />
+            <format attr='div-level' scope='cols' value='1' />
+            <format attr='div-level' scope='rows' value='0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Square' />
+            <encodings>
+              <color column='[federated.0ikf9is0xv3orl10ghsow1717vhv].[fVal:avg:oxido_nitrogeno:qk]' />
+              <text column='[federated.0ikf9is0xv3orl10ghsow1717vhv].[dy:fecha:ok]' />
+            </encodings>
+            <customized-label>
+              <formatted-text>
+                <run fontsize='7'>&lt;</run>
+                <run fontsize='7'>[federated.0ikf9is0xv3orl10ghsow1717vhv].[dy:fecha:ok]</run>
+                <run fontsize='7'>&gt;</run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='cell'>
+                <format attr='vertical-align' value='top' />
+                <format attr='text-align' value='right' />
+                <format attr='wrap' value='auto' />
+              </style-rule>
+              <style-rule element='datalabel'>
+                <format attr='color-mode' value='auto' />
+                <format attr='font-weight' value='bold' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-line-first' value='true' />
+                <format attr='mark-labels-line-last' value='true' />
+                <format attr='mark-labels-range-min' value='true' />
+                <format attr='mark-labels-range-max' value='true' />
+                <format attr='mark-labels-mode' value='all' />
+                <format attr='mark-labels-range-scope' value='pane' />
+                <format attr='mark-labels-range-field' value='' />
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-transparency' value='255' />
+                <format attr='has-stroke' value='true' />
+                <format attr='stroke-color' value='#1b1b1b' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.0ikf9is0xv3orl10ghsow1717vhv].[qr:fecha:ok] / [federated.0ikf9is0xv3orl10ghsow1717vhv].[none:Calculation_815714499501654017:ok])</rows>
+        <cols>([federated.0ikf9is0xv3orl10ghsow1717vhv].[none:Calculation_815714499501019136:ok] / [federated.0ikf9is0xv3orl10ghsow1717vhv].[wd:fecha:ok])</cols>
+        <forecast-specification auto-forecast-agg='true' band-confidence-level='95.000000' enabled='true' fill-type='fill-missing' ignore-last='1' model-type='auto-season' range-type='auto' show-prediction-bands='true' />
+      </table>
+      <simple-id uuid='{9BDEB37D-6B3C-4718-BCBE-13B66740999A}' />
+    </worksheet>
+    <worksheet name='Hoja 10'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1' fontname='Tableau Semibold' fontsize='20'>Coeficientes de determinacion para el modelo predictivo &quot;Extra Trees Regressor&quot;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='df_all_targets+ (Varias conexiones)' name='federated.0ikf9is0xv3orl10ghsow1717vhv' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0ikf9is0xv3orl10ghsow1717vhv'>
+            <column caption='Importance' datatype='string' name='[F1]' role='dimension' type='nominal' />
+            <column caption='Dioxido Nitrogeno (Df!Importance)' datatype='real' name='[dioxido_nitrogeno (df!importance)]' role='measure' type='quantitative' />
+            <column caption='Monoxido Nitrogeno (Df!Importance)' datatype='real' name='[monoxido_nitrogeno (df!importance)]' role='measure' type='quantitative' />
+            <column-instance column='[F1]' derivation='None' name='[none:F1:nk]' pivot='key' type='nominal' />
+            <column caption='Oxido Nitrogeno (Df!Importance)' datatype='real' name='[oxido_nitrogeno (df!importance)]' role='measure' type='quantitative' />
+            <column caption='Ozono (Df!Importance)' datatype='real' name='[ozono (df!importance)]' role='measure' type='quantitative' />
+            <column-instance column='[dioxido_nitrogeno (df!importance)]' derivation='Sum' name='[sum:dioxido_nitrogeno (df!importance):qk]' pivot='key' type='quantitative' />
+            <column-instance column='[monoxido_nitrogeno (df!importance)]' derivation='Sum' name='[sum:monoxido_nitrogeno (df!importance):qk]' pivot='key' type='quantitative' />
+            <column-instance column='[oxido_nitrogeno (df!importance)]' derivation='Sum' name='[sum:oxido_nitrogeno (df!importance):qk]' pivot='key' type='quantitative' />
+            <column-instance column='[ozono (df!importance)]' derivation='Sum' name='[sum:ozono (df!importance):qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0ikf9is0xv3orl10ghsow1717vhv].[:Measure Names]'>
+            <groupfilter function='union' user:op='manual'>
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0ikf9is0xv3orl10ghsow1717vhv].[sum:dioxido_nitrogeno (df!importance):qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0ikf9is0xv3orl10ghsow1717vhv].[sum:monoxido_nitrogeno (df!importance):qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0ikf9is0xv3orl10ghsow1717vhv].[sum:oxido_nitrogeno (df!importance):qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0ikf9is0xv3orl10ghsow1717vhv].[sum:ozono (df!importance):qk]&quot;' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.0ikf9is0xv3orl10ghsow1717vhv].[none:F1:nk]'>
+            <groupfilter function='member' level='[none:F1:nk]' member='&quot;r2&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0ikf9is0xv3orl10ghsow1717vhv].[none:F1:nk]</column>
+            <column>[federated.0ikf9is0xv3orl10ghsow1717vhv].[:Measure Names]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='font-size' data-class='subtotal' value='12' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='text-orientation' field='[federated.0ikf9is0xv3orl10ghsow1717vhv].[:Measure Names]' value='0' />
+            <format attr='font-size' field='[federated.0ikf9is0xv3orl10ghsow1717vhv].[:Measure Names]' value='11' />
+            <format attr='font-weight' field='[federated.0ikf9is0xv3orl10ghsow1717vhv].[:Measure Names]' value='bold' />
+            <format attr='font-family' field='[federated.0ikf9is0xv3orl10ghsow1717vhv].[:Measure Names]' value='Tableau Semibold' />
+            <format attr='font-size' field='[federated.0ikf9is0xv3orl10ghsow1717vhv].[Multiple Values]' value='10' />
+            <format attr='font-family' field='[federated.0ikf9is0xv3orl10ghsow1717vhv].[Multiple Values]' value='Tableau Semibold' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='cols' value='false' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.0ikf9is0xv3orl10ghsow1717vhv].[:Measure Names]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='0.66966849565505981' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0ikf9is0xv3orl10ghsow1717vhv].[Multiple Values]</rows>
+        <cols>([federated.0ikf9is0xv3orl10ghsow1717vhv].[none:F1:nk] / [federated.0ikf9is0xv3orl10ghsow1717vhv].[:Measure Names])</cols>
+      </table>
+      <simple-id uuid='{71818C83-6063-4A09-AC39-12CFDAA903C0}' />
+    </worksheet>
+    <worksheet name='Hoja 11'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1' fontname='Tableau Semibold' fontsize='20'>Promedio temperaturas por semana / anual</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='df_all_targets+ (Varias conexiones)' name='federated.0ikf9is0xv3orl10ghsow1717vhv' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0ikf9is0xv3orl10ghsow1717vhv'>
+            <column-instance column='[temperatura]' derivation='Avg' name='[avg:temperatura:qk]' pivot='key' type='quantitative' />
+            <column caption='Fecha' datatype='date' name='[fecha]' role='dimension' type='ordinal' />
+            <column caption='Nombre Estacion' datatype='string' name='[nombre_estacion]' role='dimension' type='nominal' />
+            <column-instance column='[nombre_estacion]' derivation='None' name='[none:nombre_estacion:nk]' pivot='key' type='nominal' />
+            <column caption='Temperatura' datatype='real' name='[temperatura]' role='measure' type='quantitative' />
+            <column-instance column='[fecha]' derivation='Week-Trunc' name='[twk:fecha:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[fecha]' derivation='Year' name='[yr:fecha:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0ikf9is0xv3orl10ghsow1717vhv].[Exclusiones (Nombre Estacion,SEMANA(Fecha))]'>
+            <groupfilter function='except' user:ui-domain='database' user:ui-enumeration='exclusive' user:ui-marker='enumerate'>
+              <groupfilter function='crossjoin'>
+                <groupfilter function='level-members' level='[none:nombre_estacion:nk]' />
+                <groupfilter function='level-members' level='[twk:fecha:qk]' />
+              </groupfilter>
+              <groupfilter function='union'>
+                <groupfilter function='crossjoin'>
+                  <groupfilter function='member' level='[none:nombre_estacion:nk]' member='&quot;Casa de campo&quot;' />
+                  <groupfilter function='union'>
+                    <groupfilter function='member' level='[twk:fecha:qk]' member='#2019-11-11 00:00:00#' />
+                    <groupfilter function='member' level='[twk:fecha:qk]' member='#2021-06-21 00:00:00#' />
+                    <groupfilter function='member' level='[twk:fecha:qk]' member='#2021-06-28 00:00:00#' />
+                  </groupfilter>
+                </groupfilter>
+                <groupfilter function='crossjoin'>
+                  <groupfilter function='member' level='[none:nombre_estacion:nk]' member='&quot;Parque Juan Carlos I&quot;' />
+                  <groupfilter function='union'>
+                    <groupfilter function='member' level='[twk:fecha:qk]' member='#2019-07-22 00:00:00#' />
+                    <groupfilter function='member' level='[twk:fecha:qk]' member='#2019-07-29 00:00:00#' />
+                    <groupfilter function='member' level='[twk:fecha:qk]' member='#2019-08-05 00:00:00#' />
+                  </groupfilter>
+                </groupfilter>
+                <groupfilter function='crossjoin'>
+                  <groupfilter function='member' level='[none:nombre_estacion:nk]' member='&quot;Plaza Eliptica&quot;' />
+                  <groupfilter function='member' level='[twk:fecha:qk]' member='#2019-06-24 00:00:00#' />
+                </groupfilter>
+              </groupfilter>
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.0ikf9is0xv3orl10ghsow1717vhv].[none:nombre_estacion:nk]'>
+            <groupfilter function='level-members' level='[none:nombre_estacion:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0ikf9is0xv3orl10ghsow1717vhv].[yr:fecha:ok]'>
+            <groupfilter function='member' level='[yr:fecha:ok]' member='2020' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0ikf9is0xv3orl10ghsow1717vhv].[yr:fecha:ok]</column>
+            <column>[federated.0ikf9is0xv3orl10ghsow1717vhv].[none:nombre_estacion:nk]</column>
+            <column>[federated.0ikf9is0xv3orl10ghsow1717vhv].[Exclusiones (Nombre Estacion,SEMANA(Fecha))]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='label'>
+            <format attr='font-weight' field='[federated.0ikf9is0xv3orl10ghsow1717vhv].[twk:fecha:qk]' value='bold' />
+            <format attr='font-size' field='[federated.0ikf9is0xv3orl10ghsow1717vhv].[twk:fecha:qk]' value='10' />
+            <format attr='font-size' field='[federated.0ikf9is0xv3orl10ghsow1717vhv].[avg:temperatura:qk]' value='10' />
+            <format attr='font-family' field='[federated.0ikf9is0xv3orl10ghsow1717vhv].[avg:temperatura:qk]' value='Tableau Semibold' />
+          </style-rule>
+          <style-rule element='refline'>
+            <format attr='stroke-color' id='refline0' value='#000000' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.0ikf9is0xv3orl10ghsow1717vhv].[none:nombre_estacion:nk]' />
+            </encodings>
+            <reference-line axis-column='[federated.0ikf9is0xv3orl10ghsow1717vhv].[avg:temperatura:qk]' enable-instant-analytics='true' formula='constant' id='refline1' label-type='automatic' scope='per-table' value='-1.4000000000000001' value-column='[federated.0ikf9is0xv3orl10ghsow1717vhv].[avg:temperatura:qk]' z-order='1' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='0.38381215929985046' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0ikf9is0xv3orl10ghsow1717vhv].[avg:temperatura:qk]</rows>
+        <cols>[federated.0ikf9is0xv3orl10ghsow1717vhv].[twk:fecha:qk]</cols>
+      </table>
+      <simple-id uuid='{1B22D999-3266-478A-92CB-F62E174B1DFA}' />
+    </worksheet>
+    <worksheet name='Hoja 5'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='df_all_targets+ (Varias conexiones)' name='federated.0ikf9is0xv3orl10ghsow1717vhv' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.0ikf9is0xv3orl10ghsow1717vhv'>
+            <column caption='Pais' datatype='string' name='[PAIS]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column caption='Provincia' datatype='string' name='[PROVINCIA]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+            <column aggregation='Sum' caption='Zip Code' datatype='integer' default-format='*00000' name='[ZIP CODE]' role='dimension' semantic-role='[ZipCode].[Name]' type='ordinal' />
+            <column caption='Fecha' datatype='date' name='[fecha]' role='dimension' type='ordinal' />
+            <column caption='Nombre Estacion' datatype='string' name='[nombre_estacion]' role='dimension' type='nominal' />
+            <column-instance column='[PAIS]' derivation='None' name='[none:PAIS:nk]' pivot='key' type='nominal' />
+            <column-instance column='[PROVINCIA]' derivation='None' name='[none:PROVINCIA:nk]' pivot='key' type='nominal' />
+            <column-instance column='[ZIP CODE]' derivation='None' name='[none:ZIP CODE:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[nombre_estacion]' derivation='None' name='[none:nombre_estacion:nk]' pivot='key' type='nominal' />
+            <column-instance column='[fecha]' derivation='Year' name='[yr:fecha:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0ikf9is0xv3orl10ghsow1717vhv].[yr:fecha:ok]'>
+            <groupfilter function='member' level='[yr:fecha:ok]' member='2022' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0ikf9is0xv3orl10ghsow1717vhv].[yr:fecha:ok]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.0ikf9is0xv3orl10ghsow1717vhv].[Longitude (generated)]' field-type='quantitative' max='-357403.74397490197' min='-446168.44694977126' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.0ikf9is0xv3orl10ghsow1717vhv].[Latitude (generated)]' field-type='quantitative' max='4948206.4192707278' min='4900182.9417852731' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='font-family' field='[federated.0ikf9is0xv3orl10ghsow1717vhv].[none:nombre_estacion:nk]' value='Tableau Semibold' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='font-family' field='[federated.0ikf9is0xv3orl10ghsow1717vhv].[none:nombre_estacion:nk]' value='Tableau Semibold' />
+            <format attr='font-weight' field='[federated.0ikf9is0xv3orl10ghsow1717vhv].[none:nombre_estacion:nk]' value='bold' />
+            <format attr='font-size' field='[federated.0ikf9is0xv3orl10ghsow1717vhv].[none:nombre_estacion:nk]' value='10' />
+          </style-rule>
+          <style-rule element='map-layer'>
+            <format attr='enabled' id='b01002_001e' value='false' />
+            <format attr='enabled' id='b01002_002e' value='false' />
+            <format attr='enabled' id='b01002_003e' value='false' />
+            <format attr='enabled' id='dp02_0001e' value='false' />
+            <format attr='enabled' id='dp02_0015e' value='false' />
+            <format attr='enabled' id='dp03_0027e_plus_dp03_0029e' value='false' />
+            <format attr='enabled' id='dp03_0028e' value='false' />
+            <format attr='enabled' id='dp03_0030e_plus_dp03_0031e' value='false' />
+            <format attr='enabled' id='dp03_0062e' value='false' />
+            <format attr='enabled' id='dp03_0088e' value='false' />
+            <format attr='enabled' id='dp04_0001e' value='false' />
+            <format attr='enabled' id='dp04_0046e' value='false' />
+            <format attr='enabled' id='dp04_0047e' value='false' />
+            <format attr='enabled' id='dp04_0089e' value='false' />
+            <format attr='enabled' id='dp05_0001e' value='false' />
+            <format attr='enabled' id='dp05_0002e_div_dp05_0003e' value='false' />
+            <format attr='enabled' id='dp05_0032e' value='false' />
+            <format attr='enabled' id='dp05_0033e' value='false' />
+            <format attr='enabled' id='dp05_0034e' value='false' />
+            <format attr='enabled' id='dp05_0039e' value='false' />
+            <format attr='enabled' id='dp05_0047e' value='false' />
+            <format attr='enabled' id='dp05_0053e' value='false' />
+            <format attr='enabled' id='dp05_0066e' value='false' />
+            <format attr='enabled' id='dp05_0077e' value='false' />
+            <format attr='enabled' id='housenum-label' value='false' />
+            <format attr='enabled' id='building-line' value='false' />
+            <format attr='enabled' id='building' value='false' />
+            <format attr='enabled' id='rail-label' value='false' />
+            <format attr='enabled' id='place-residential' value='false' />
+            <format attr='enabled' id='place-neighbourhood' value='false' />
+            <format attr='enabled' id='place-suburb' value='false' />
+            <format attr='enabled' id='poi-relevant-scalerank4-l15' value='false' />
+            <format attr='enabled' id='poi-relevant-scalerank4-l1' value='false' />
+            <format attr='enabled' id='poi-parks_scalerank4' value='false' />
+            <format attr='enabled' id='poi-scalerank3' value='false' />
+            <format attr='enabled' id='poi-parks-scalerank3' value='false' />
+            <format attr='enabled' id='poi-outdoor-features' value='false' />
+            <format attr='enabled' id='poi-outdoor-features-2' value='false' />
+            <format attr='enabled' id='mountain-peak-label' value='false' />
+            <format attr='enabled' id='mountain-peak-label-with-elevation' value='false' />
+            <format attr='enabled' id='poi-scalerank2' value='false' />
+            <format attr='enabled' id='poi-parks-scalerank2' value='false' />
+            <format attr='enabled' id='poi-parks-scalerank1' value='false' />
+            <format attr='enabled' id='poi-scalerank1' value='false' />
+            <format attr='enabled' id='airport-label' value='false' />
+            <format attr='enabled' id='water-label-sm' value='false' />
+            <format attr='enabled' id='water-label' value='false' />
+            <format attr='enabled' id='waterway-label' value='false' />
+            <format attr='enabled' id='marine-label-sm-ln' value='false' />
+            <format attr='enabled' id='marine-label-sm-pt' value='false' />
+            <format attr='enabled' id='marine-label-md-ln' value='false' />
+            <format attr='enabled' id='marine-label-md-pt' value='false' />
+            <format attr='enabled' id='marine-label-lg-ln' value='false' />
+            <format attr='enabled' id='marine-label-lg-pt' value='false' />
+            <format attr='enabled' id='state-label-sm' value='false' />
+            <format attr='enabled' id='state-label-md' value='false' />
+            <format attr='enabled' id='state-label-lg' value='false' />
+            <format attr='enabled' id='place-hamlet' value='false' />
+            <format attr='enabled' id='place-village' value='false' />
+            <format attr='enabled' id='place-town' value='false' />
+            <format attr='enabled' id='place-city-sm' value='false' />
+            <format attr='enabled' id='place-islet-archipelago-aboriginal' value='false' />
+            <format attr='enabled' id='place-islet-archipelago-aboriginal-2' value='false' />
+            <format attr='enabled' id='place-city-md-s' value='false' />
+            <format attr='enabled' id='place-city-md-n' value='false' />
+            <format attr='enabled' id='place-city-lg-s' value='false' />
+            <format attr='enabled' id='place-city-lg-n' value='false' />
+            <format attr='enabled' id='place-island' value='false' />
+            <format attr='enabled' id='place-island-2' value='false' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0.14000000059604645' />
+            <format attr='map-style' value='outdoors' />
+            <format attr='wrap' value='false' />
+          </style-rule>
+          <style-rule element='map-data-layer'>
+            <format attr='palette' value='tableau-map-blue-green-light' />
+            <format attr='geo-area-type' value='State' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Circle' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.0ikf9is0xv3orl10ghsow1717vhv].[none:ZIP CODE:ok]' />
+              <text column='[federated.0ikf9is0xv3orl10ghsow1717vhv].[none:nombre_estacion:nk]' />
+              <lod column='[federated.0ikf9is0xv3orl10ghsow1717vhv].[none:PAIS:nk]' />
+              <lod column='[federated.0ikf9is0xv3orl10ghsow1717vhv].[none:PROVINCIA:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='cell'>
+                <format attr='wrap' value='off' />
+              </style-rule>
+              <style-rule element='datalabel'>
+                <format attr='color-mode' value='user' />
+                <format attr='font-family' value='Tableau Semibold' />
+                <format attr='text-decoration' value='underline' />
+                <format attr='font-size' value='10' />
+                <format attr='color' value='#000000' />
+                <format attr='font-weight' value='normal' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='size' value='2.8176796436309814' />
+                <format attr='mark-transparency' value='198' />
+                <format attr='has-stroke' value='false' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-mode' value='all' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0ikf9is0xv3orl10ghsow1717vhv].[Latitude (generated)]</rows>
+        <cols>[federated.0ikf9is0xv3orl10ghsow1717vhv].[Longitude (generated)]</cols>
+      </table>
+      <simple-id uuid='{6105B5F4-7325-438D-97F3-40511AE6FD63}' />
+    </worksheet>
+    <worksheet name='Hoja 6'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1' fontname='Tableau Semibold' fontsize='20'>Importancia de las variables</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='df_all_targets+ (Varias conexiones)' name='federated.0ikf9is0xv3orl10ghsow1717vhv' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0ikf9is0xv3orl10ghsow1717vhv'>
+            <column caption='Importance' datatype='string' name='[F1]' role='dimension' type='nominal' />
+            <column caption='Dioxido Nitrogeno (Df!Importance)' datatype='real' name='[dioxido_nitrogeno (df!importance)]' role='measure' type='quantitative' />
+            <column caption='Monoxido Nitrogeno (Df!Importance)' datatype='real' name='[monoxido_nitrogeno (df!importance)]' role='measure' type='quantitative' />
+            <column-instance column='[F1]' derivation='None' name='[none:F1:nk]' pivot='key' type='nominal' />
+            <column caption='Oxido Nitrogeno (Df!Importance)' datatype='real' name='[oxido_nitrogeno (df!importance)]' role='measure' type='quantitative' />
+            <column caption='Ozono (Df!Importance)' datatype='real' name='[ozono (df!importance)]' role='measure' type='quantitative' />
+            <column-instance column='[dioxido_nitrogeno (df!importance)]' derivation='Sum' name='[sum:dioxido_nitrogeno (df!importance):qk]' pivot='key' type='quantitative' />
+            <column-instance column='[monoxido_nitrogeno (df!importance)]' derivation='Sum' name='[sum:monoxido_nitrogeno (df!importance):qk]' pivot='key' type='quantitative' />
+            <column-instance column='[oxido_nitrogeno (df!importance)]' derivation='Sum' name='[sum:oxido_nitrogeno (df!importance):qk]' pivot='key' type='quantitative' />
+            <column-instance column='[ozono (df!importance)]' derivation='Sum' name='[sum:ozono (df!importance):qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0ikf9is0xv3orl10ghsow1717vhv].[:Measure Names]'>
+            <groupfilter function='union' user:op='manual'>
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0ikf9is0xv3orl10ghsow1717vhv].[sum:dioxido_nitrogeno (df!importance):qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0ikf9is0xv3orl10ghsow1717vhv].[sum:monoxido_nitrogeno (df!importance):qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0ikf9is0xv3orl10ghsow1717vhv].[sum:oxido_nitrogeno (df!importance):qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0ikf9is0xv3orl10ghsow1717vhv].[sum:ozono (df!importance):qk]&quot;' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.0ikf9is0xv3orl10ghsow1717vhv].[none:F1:nk]'>
+            <groupfilter function='union' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[none:F1:nk]' member='&quot;imp_año&quot;' />
+              <groupfilter function='member' level='[none:F1:nk]' member='&quot;imp_dir_viento&quot;' />
+              <groupfilter function='member' level='[none:F1:nk]' member='&quot;imp_estacion&quot;' />
+              <groupfilter function='member' level='[none:F1:nk]' member='&quot;imp_humedad_rel&quot;' />
+              <groupfilter function='member' level='[none:F1:nk]' member='&quot;imp_mes&quot;' />
+              <groupfilter function='member' level='[none:F1:nk]' member='&quot;imp_precipitacion&quot;' />
+              <groupfilter function='member' level='[none:F1:nk]' member='&quot;imp_presion_barometrica&quot;' />
+              <groupfilter function='member' level='[none:F1:nk]' member='&quot;imp_temperatura&quot;' />
+              <groupfilter function='member' level='[none:F1:nk]' member='&quot;imp_vel_viento&quot;' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.0ikf9is0xv3orl10ghsow1717vhv].[none:F1:nk]</column>
+            <column>[federated.0ikf9is0xv3orl10ghsow1717vhv].[:Measure Names]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='border-width' scope='rows' value='0' />
+            <format attr='border-style' scope='rows' value='none' />
+          </style-rule>
+          <style-rule element='field-labels'>
+            <format attr='font-size' value='12' />
+          </style-rule>
+          <style-rule element='field-labels-decoration'>
+            <format attr='font-family' value='Tableau Semibold' />
+            <format attr='font-size' value='14' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='font-family' field='[federated.0ikf9is0xv3orl10ghsow1717vhv].[Multiple Values]' value='Tableau Semibold' />
+            <format attr='font-size' field='[federated.0ikf9is0xv3orl10ghsow1717vhv].[Multiple Values]' value='10' />
+          </style-rule>
+          <style-rule element='pane'>
+            <format attr='border-style' data-class='subtotal' scope='rows' value='solid' />
+            <format attr='border-width' data-class='subtotal' scope='rows' value='5' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='cols' value='false' />
+          </style-rule>
+          <style-rule element='axis-title'>
+            <format attr='font-size' field='[federated.0ikf9is0xv3orl10ghsow1717vhv].[Multiple Values]' value='9' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0ikf9is0xv3orl10ghsow1717vhv].[:Measure Names]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.0ikf9is0xv3orl10ghsow1717vhv].[Multiple Values]</rows>
+        <cols>([federated.0ikf9is0xv3orl10ghsow1717vhv].[none:F1:nk] / [federated.0ikf9is0xv3orl10ghsow1717vhv].[:Measure Names])</cols>
+      </table>
+      <simple-id uuid='{F27BEA49-8045-48F6-A1F6-E24924F17EE5}' />
+    </worksheet>
+    <worksheet name='Hoja 7'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1' fontname='Tableau Semibold' fontsize='18'>Predominancia de vientos por estacion</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='df_all_targets+ (Varias conexiones)' name='federated.0ikf9is0xv3orl10ghsow1717vhv' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0ikf9is0xv3orl10ghsow1717vhv'>
+            <column-instance column='[dir_cardinal]' derivation='Count' name='[cnt:dir_cardinal:qk]' pivot='key' type='quantitative' />
+            <column caption='Dir Cardinal' datatype='string' name='[dir_cardinal]' role='dimension' type='nominal' />
+            <column caption='Nombre Estacion' datatype='string' name='[nombre_estacion]' role='dimension' type='nominal' />
+            <column-instance column='[dir_cardinal]' derivation='None' name='[none:dir_cardinal:nk]' pivot='key' type='nominal' />
+            <column-instance column='[nombre_estacion]' derivation='None' name='[none:nombre_estacion:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='label'>
+            <format attr='font-size' field='[federated.0ikf9is0xv3orl10ghsow1717vhv].[none:nombre_estacion:nk]' value='10' />
+            <format attr='font-weight' field='[federated.0ikf9is0xv3orl10ghsow1717vhv].[none:nombre_estacion:nk]' value='normal' />
+            <format attr='text-align' field='[federated.0ikf9is0xv3orl10ghsow1717vhv].[none:nombre_estacion:nk]' value='center' />
+            <format attr='text-orientation' field='[federated.0ikf9is0xv3orl10ghsow1717vhv].[none:nombre_estacion:nk]' value='0' />
+            <format attr='font-family' field='[federated.0ikf9is0xv3orl10ghsow1717vhv].[none:nombre_estacion:nk]' value='Tableau Semibold' />
+            <format attr='font-size' field='[federated.0ikf9is0xv3orl10ghsow1717vhv].[cnt:dir_cardinal:qk]' value='10' />
+            <format attr='font-family' field='[federated.0ikf9is0xv3orl10ghsow1717vhv].[cnt:dir_cardinal:qk]' value='Tableau Semibold' />
+          </style-rule>
+          <style-rule element='pane'>
+            <format attr='background-color' data-class='subtotal' scope='rows' value='#1b1b1b' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='background-color' value='#f9f8f7' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='cols' value='false' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.0ikf9is0xv3orl10ghsow1717vhv].[none:dir_cardinal:nk]' />
+              <text column='[federated.0ikf9is0xv3orl10ghsow1717vhv].[none:dir_cardinal:nk]' />
+              <lod column='[federated.0ikf9is0xv3orl10ghsow1717vhv].[none:dir_cardinal:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='datalabel'>
+                <format attr='color-mode' value='auto' />
+                <format attr='font-family' value='Tableau Semibold' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='size' value='1.2413811683654785' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0ikf9is0xv3orl10ghsow1717vhv].[cnt:dir_cardinal:qk]</rows>
+        <cols>[federated.0ikf9is0xv3orl10ghsow1717vhv].[none:nombre_estacion:nk]</cols>
+      </table>
+      <simple-id uuid='{E15AED24-85EB-46FE-830B-A0D5965A46E3}' />
+    </worksheet>
+  </worksheets>
+  <windows saved-dpi-scale-factor='1.25' source-height='37'>
+    <window class='worksheet' name='Hoja 5'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='37'>
+            <card type='columns' />
+          </strip>
+          <strip size='37'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='174'>
+            <card mode='slider' param='[federated.0ikf9is0xv3orl10ghsow1717vhv].[yr:fecha:ok]' type='filter' />
+            <card pane-specification-id='2' param='[federated.0ikf9is0xv3orl10ghsow1717vhv].[none:ZIP CODE:ok]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <default-map-tool-selection tool='1' />
+      </viewpoint>
+      <simple-id uuid='{6A3D72DD-DE2C-4A9A-800C-55AACA86D741}' />
+    </window>
+    <window class='worksheet' name='Hoja 11'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='37'>
+            <card type='columns' />
+          </strip>
+          <strip size='37'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='174'>
+            <card mode='dropdown' param='[federated.0ikf9is0xv3orl10ghsow1717vhv].[none:nombre_estacion:nk]' type='filter' />
+            <card mode='slider' param='[federated.0ikf9is0xv3orl10ghsow1717vhv].[yr:fecha:ok]' type='filter' />
+            <card pane-specification-id='0' param='[federated.0ikf9is0xv3orl10ghsow1717vhv].[none:nombre_estacion:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{C35884F9-345E-4AB3-A192-A448E2BB7882}' />
+    </window>
+    <window class='worksheet' name='Hoja 7'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='37'>
+            <card type='columns' />
+          </strip>
+          <strip size='37'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='174'>
+            <card pane-specification-id='0' param='[federated.0ikf9is0xv3orl10ghsow1717vhv].[none:dir_cardinal:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{A526E9EF-B8FD-4A3E-A5CA-84C5640E52DD}' />
+    </window>
+    <window class='worksheet' name='Dispersion Ozono-Temp' tab-color='#f66273'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='37'>
+            <card type='title' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='192'>
+            <card mode='slider' param='[federated.0ikf9is0xv3orl10ghsow1717vhv].[yr:fecha:ok]' type='filter' />
+            <card pane-specification-id='0' param='[federated.0ikf9is0xv3orl10ghsow1717vhv].[none:nombre_estacion:nk]' type='color' />
+            <card AVG='true' KURTOSIS='false' MAX='true' MEDIAN='true' MIN='true' QUART1='true' QUART3='true' SKEWNESS='true' STDEV='true' SUM='true' type='summary' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{A7D25C8D-B44C-46EB-A582-3141D4B8D940}' />
+    </window>
+    <window class='worksheet' name='Dispersion Ozono -HR' tab-color='#f66273'>
+      <cards>
+        <edge name='left'>
+          <strip size='180'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='192'>
+            <card mode='slider' param='[federated.0ikf9is0xv3orl10ghsow1717vhv].[yr:fecha:ok]' type='filter' />
+            <card pane-specification-id='0' param='[federated.0ikf9is0xv3orl10ghsow1717vhv].[none:nombre_estacion:nk]' type='color' />
+            <card AVG='true' KURTOSIS='false' MAX='true' MEDIAN='true' MIN='true' QUART1='true' QUART3='true' SKEWNESS='true' STDEV='true' SUM='true' type='summary' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{62DA8020-F943-47E3-A94C-74CBA16DA83B}' />
+    </window>
+    <window class='worksheet' name='Hoja 1 (2)' tab-color='#4f779a'>
+      <cards>
+        <edge name='left'>
+          <strip size='174'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='37'>
+            <card type='columns' />
+          </strip>
+          <strip size='37'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='174'>
+            <card mode='slider' param='[federated.0ikf9is0xv3orl10ghsow1717vhv].[yr:fecha:ok]' type='filter' />
+            <card pane-specification-id='0' param='[federated.0ikf9is0xv3orl10ghsow1717vhv].[fVal:avg:ozono:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{BF866EA0-9FB9-42E7-B2B8-7DECFE457BBC}' />
+    </window>
+    <window class='worksheet' name='Hoja 1' tab-color='#4f779a'>
+      <cards>
+        <edge name='left'>
+          <strip size='174'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='37'>
+            <card type='columns' />
+          </strip>
+          <strip size='37'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='158'>
+            <card mode='dropdown' param='[federated.0ikf9is0xv3orl10ghsow1717vhv].[none:nombre_estacion:nk]' type='filter' />
+            <card mode='slider' param='[federated.0ikf9is0xv3orl10ghsow1717vhv].[yr:fecha:ok]' type='filter' />
+            <card pane-specification-id='0' param='[federated.0ikf9is0xv3orl10ghsow1717vhv].[fVal:avg:monoxido_nitrogeno:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{C8FC4734-57FA-437A-88E6-78EAFA30BC73}' />
+    </window>
+    <window class='worksheet' name='Hoja 1 (3)' tab-color='#4f779a'>
+      <cards>
+        <edge name='left'>
+          <strip size='174'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='37'>
+            <card type='columns' />
+          </strip>
+          <strip size='37'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='158'>
+            <card mode='dropdown' param='[federated.0ikf9is0xv3orl10ghsow1717vhv].[none:nombre_estacion:nk]' type='filter' />
+            <card mode='slider' param='[federated.0ikf9is0xv3orl10ghsow1717vhv].[yr:fecha:ok]' type='filter' />
+            <card pane-specification-id='0' param='[federated.0ikf9is0xv3orl10ghsow1717vhv].[fVal:avg:dioxido_nitrogeno:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{D9A0CAFF-9B5A-4941-B6FA-6A41F78FB9F8}' />
+    </window>
+    <window class='worksheet' name='Hoja 1 (4)' tab-color='#4f779a'>
+      <cards>
+        <edge name='left'>
+          <strip size='174'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='37'>
+            <card type='columns' />
+          </strip>
+          <strip size='37'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='158'>
+            <card mode='dropdown' param='[federated.0ikf9is0xv3orl10ghsow1717vhv].[none:nombre_estacion:nk]' type='filter' />
+            <card mode='slider' param='[federated.0ikf9is0xv3orl10ghsow1717vhv].[yr:fecha:ok]' type='filter' />
+            <card pane-specification-id='0' param='[federated.0ikf9is0xv3orl10ghsow1717vhv].[fVal:avg:oxido_nitrogeno:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{92895168-4041-4306-B24C-D37A0C6A1EF5}' />
+    </window>
+    <window class='worksheet' name='Hoja 10' tab-color='#dec77b'>
+      <cards>
+        <edge name='left'>
+          <strip size='234'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card type='measures' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='41'>
+            <card type='columns' />
+          </strip>
+          <strip size='37'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='174'>
+            <card mode='dropdown' param='[federated.0ikf9is0xv3orl10ghsow1717vhv].[none:F1:nk]' type='filter' />
+            <card pane-specification-id='0' param='[federated.0ikf9is0xv3orl10ghsow1717vhv].[:Measure Names]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{0BBF9476-2172-435D-9007-633605CC83C0}' />
+    </window>
+    <window class='worksheet' maximized='true' name='Hoja 6' tab-color='#dec77b'>
+      <cards>
+        <edge name='left'>
+          <strip size='208'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card type='measures' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='36'>
+            <card type='columns' />
+          </strip>
+          <strip size='36'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='173'>
+            <card pane-specification-id='0' param='[federated.0ikf9is0xv3orl10ghsow1717vhv].[:Measure Names]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='fit-width' />
+      </viewpoint>
+      <simple-id uuid='{559DAD62-C73A-4B78-AFA3-5F69C74699BF}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Hoja 6' width='192'>
+      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
+    </thumbnail>
+  </thumbnails>
+</workbook>
